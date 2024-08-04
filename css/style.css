@@ -1,0 +1,2066 @@
+/*
+
+Theme Name Scenario
+Description Un thème WordPress personnalisé nommé Senario.
+Version 1.0
+License GNU General Public License v2 or later
+License URI httpwww.gnu.orglicensesgpl-2.0.html
+Text Domain senario
+Version: 1.0
+Author: 7om
+Author URI: https://www.searching-murphy.com/
+*/
+
+/* Raleway Font Faces */
+@font-face {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../assets/fonts/Raleway-Italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../assets/fonts/Raleway-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 300;
+    src: url('../assets/fonts/Raleway-LightItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../assets/fonts/Raleway-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 500;
+    src: url('../assets/fonts/Raleway-MediumItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/Raleway-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../assets/fonts/Raleway-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 600;
+    src: url('../assets/fonts/Raleway-SemiBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 100;
+    src: url('../assets/fonts/Raleway-Thin.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 100;
+    src: url('../assets/fonts/Raleway-ThinItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../assets/fonts/Raleway-Black.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 900;
+    src: url('../assets/fonts/Raleway-BlackItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../assets/fonts/Raleway-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 700;
+    src: url('../assets/fonts/Raleway-BoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../assets/fonts/Raleway-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 800;
+    src: url('../assets/fonts/Raleway-ExtraBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 200;
+    src: url('../assets/fonts/Raleway-ExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 200;
+    src: url('../assets/fonts/Raleway-ExtraLightItalic.woff2') format('woff2');
+}
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: #ffffff;
+    color: #23282d;
+    max-width: 1440px;
+    margin: 0 auto; /* Centre le contenu horizontalement */
+    padding: 0 20px; /* Ajoute un peu d'espace sur les côtés */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+element.style {
+    width: 1440px;
+    height: 1440px;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+p.bold {
+    font-weight: 700;
+}
+
+p.light {
+    font-weight: 300;
+}
+
+h1 {
+    padding-top: 50px;
+    text-align: center;
+    font-weight: 900; /* Utilisation de Raleway Black */
+}
+
+a {
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: #000;
+}
+
+ul li {
+   
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Styles supplémentaires */
+.hero-header {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    padding: 100px 0;
+    background: url('../assets/images/hero-image.jpg') no-repeat center center/cover;
+    color: #fff;
+}
+
+footer {
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    padding: 10px 0;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2em;
+}
+
+nav a:hover {
+    color: #ff6347;
+}
+
+
+
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.1); /* Fond blanc transparent */
+    border-radius: 20px; /* Coins arrondis pour l'effet plexiglass */
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 8px, rgba(0, 0, 0, 0.2) 0 10px 20px; /* Ombre subtile */
+    backdrop-filter: blur(10px); /* Effet de flou pour l'arrière-plan */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure subtile */
+    z-index: 100;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+} 
+
+.container-header
+{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	width:100%;
+	max-width:1440px;
+	padding:0 80px
+}
+
+.container-header img
+{
+	width:220px;
+	height:auto;
+	display:flex;
+	justify-content:right
+}
+
+.main-menu
+{
+	margin-left:auto;
+	display:flex
+}
+
+.main-menu ul
+{
+	display:flex;
+	list-style:none;
+	padding:0;
+	margin:0
+}
+
+.main-menu ul li
+{
+	margin:0 10px
+}
+
+.main-menu ul li a
+{
+	text-decoration:none;
+	color:#000;
+	font-weight:400;
+	font-size:16px;
+	text-transform:uppercase
+}
+
+.main-menu ul li a:hover,.main-menu ul li.current-menu-item a
+{
+	font-weight:700
+}
+
+
+
+#logo {
+scale: 0.3;	
+} 
+
+
+/*Animationv nav icons */
+/* Styles généraux pour les icônes du menu */
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.menu-icon {
+  width: 30px; /* Taille des icônes du menu */
+  height: 30px;
+  transition: all 0.3s ease;
+}
+
+.menu-item a {
+  color: rgb(0, 0, 0);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Animation au survol pour les icônes du menu */
+.menu-item a:hover .menu-icon {
+  transform: scale(1.2) rotate(360deg); /* Agrandissement et rotation */
+}
+
+.menu-item a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #A9EAFE; /* Fond coloré au survol */
+  border-radius: 50%;
+  transform: scale(0); /* Initialement invisible */
+  transition: all 0.3s ease;
+}
+
+/* Animation au survol pour le fond coloré */
+.menu-item a:hover::before {
+  transform: scale(0.9); /* Fond coloré visible */
+}
+
+
+
+
+
+
+
+
+.photo-banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px; /* Padding pour espacer le titre de la bordure */
+    background: rgba(255, 255, 255, 0); /* Transparent */
+    backdrop-filter: blur(10px); /* Effet de flou pour imiter le plexiglas */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Bordure translucide */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre */
+    width: 100%; /* Prend toute la largeur du conteneur parent */
+    max-width: 1200px; /* Largeur maximale pour éviter les étirements excessifs */
+    margin: 20px auto; /* Centre horizontalement */
+    box-sizing: border-box; /* Inclure padding et bordure dans la largeur totale */
+	height: auto; /* Hauteur automatique en fonction du contenu */
+}
+
+.banner-content {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Largeur maximale du conteneur */
+    margin: 0 auto; /* Centre horizontalement */
+    text-align: center; /* Centrer le texte */
+}
+/* Style pour la carte plexiglass */
+.plexiglass-card {
+    background: rgba(255, 255, 255, 0.1); /* Fond transparent */
+    border-radius: 20px; /* Coins arrondis */
+    padding: 20px; /* Espacement intérieur */
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 8px, rgba(0, 0, 0, 0.2) 0 10px 20px; /* Ombre subtile */
+    backdrop-filter: blur(10px); /* Effet de flou pour l'arrière-plan */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure subtile */
+    display: flex;
+    align-items: center; /* Centre le contenu verticalement */
+    justify-content: center; /* Centre le contenu horizontalement */
+    position: relative; /* Pour le positionnement absolu du logo */
+    gap: 10px; /* Espacement entre le texte et le logo */
+}
+
+/* Style pour le logo WordPress */
+.wordpress-logo {
+    width: 60px; /* Ajustez la taille du logo */
+    height: auto;
+    display: inline-block;
+	  /* Effet de flou */
+	  filter: blur(0px); /* Ajustez le niveau de flou selon vos besoins */
+	  margin: 20px;
+}
+
+
+/* Style pour le texte du nom */
+.name {
+    font-family: 'Playfair Display', serif; /* Choisissez une police élégante */
+    font-size: 36px; /* Ajustez la taille de la police */
+    font-weight: 700; /* Gras */
+    color: #333; /* Couleur du texte */
+}
+
+/* Style pour le sous-titre */
+.title-subtext {
+    font-family: 'Raleway', sans-serif; /* Police sans-serif pour le sous-titre */
+    font-size: 72px; /* Ajustez la taille de la police si nécessaire */
+    font-weight: 400; /* Non gras */
+    color: #333; /* Couleur du texte */
+    text-align: center; /* Centre le sous-titre */
+}
+
+/* Style pour le nom dans le titre héroïque */
+.title-hero .name {
+  font-family: 'Raleway';
+    text-transform: uppercase; /* Mettre tout en majuscules */
+    /*font-size: 96px; /* Taille de la police 96px */
+    font-weight: 200; /* Poids de police 700 */
+    color: #000000; /* Couleur du texte */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre pour le contraste */
+    background-color: rgba(255, 217, 0, 0); /* Transparent */
+    box-sizing: border-box; /* Inclure padding dans la largeur totale */
+    z-index: 1; /* Assurer que le texte est au-dessus des éléments arrière */
+    margin: 0; /* Enlever les marges par défaut */
+    line-height: 1.2; /* Ajuster la hauteur de ligne pour une meilleure lisibilité */
+}
+
+/* Style du texte du titre héroïque */
+.title-hero {
+    font-family: 'Dancing Script', cursive; /* Police Dancing Script */
+    font-size: 82px; /* Taille de la police pour le texte secondaire */
+    font-weight:100; /* Pas en gras */
+    color: #000000; /* Couleur du texte */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre pour le contraste */
+    background-color: rgba(255, 217, 0, 0); /* Transparent */
+    box-sizing: border-box; /* Inclure padding dans la largeur totale */
+    z-index: 1; /* Assurer que le texte est au-dessus des éléments arrière */
+    margin: 0; /* Enlever les marges par défaut */
+    line-height: 1.2; /* Ajuster la hauteur de ligne pour une meilleure lisibilité */
+}
+
+
+/* Conteneur de la carte pour les titres */
+.title-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*padding: 40px;*/
+    background: rgba(255, 255, 255, 0.3); /* Transparent */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px; /* Largeur maximale */
+    height: auto; /* Hauteur automatique en fonction du contenu */
+    margin: 20px auto; /* Centre horizontalement */
+    box-sizing: border-box;
+}
+
+
+.title {
+    font-weight: 700;
+    font-size: 48px;
+    font-variant: small-caps;
+    color: #000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin: 0; /* Enlever les marges par défaut */
+    text-align: center; /* Centrer le texte */
+    z-index: 1;
+}
+
+.subtitle {
+    font-weight: 400;
+    font-size: 24px;
+    color: #555;
+    margin-top: 10px; /* Marge pour espacer du titre */
+    text-align: center; /* Centrer le texte */
+    z-index: 1;
+}
+
+
+
+
+
+
+.main-menu ul li a
+{
+	font-family: 'Raleway', sans-serif;
+	text-decoration:none;
+	color:#000;
+	font-weight:400;
+	font-size:16px;
+	text-transform:uppercase;
+	transition:font-weight .3s ease
+}
+
+.main-menu ul li a.active
+{
+	font-weight:700
+}
+
+.main-menu ul li a:hover
+{
+	font-weight:700
+}
+
+/* Style pour le footer */
+#footer {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.1); /* Fond blanc transparent */
+    border-radius: 20px; /* Coins arrondis pour l'effet plexiglass */
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 8px, rgba(0, 0, 0, 0.2) 0 10px 20px; /* Ombre subtile */
+    backdrop-filter: blur(10px); /* Effet de flou pour l'arrière-plan */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure subtile */
+    z-index: 100;
+}
+
+#footer a
+{
+	font-family: 'Raleway', sans-serif;
+	color:#000;
+	text-decoration:none;
+	font-weight:400;
+	font-size:16px;
+	text-transform:uppercase;
+	margin:0 20px;
+	transition:font-weight .3s ease
+}
+
+#footer a:hover
+{
+	font-weight:700
+}
+
+#footer .current-menu-item a,#footer .menu-item a:hover
+{
+	font-weight:700
+}
+
+.footer-container
+{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:100%;
+	height:100%;
+	padding:0 20px;
+	max-width:1440px
+}
+
+@media screen and (max-width: 768px) {
+	#footer
+	{
+		height:auto;
+		border-top:1px solid #000;
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		align-items:center;
+		width:100%;
+		padding:20px 0
+	}
+	
+	.footer-container
+	{
+		width:320px;
+		padding:0;
+		max-width:none;
+		display:flex;
+		flex-direction:column;
+		align-items:center
+	}
+	
+	.menu-footer-menu-container,.footer-center,#widget-area
+	{
+		flex-grow:0;
+		text-align:center;
+		width:100%;
+		margin-bottom:10px
+	}
+	
+	.legale
+	{
+		position:relative;
+		margin-left:-50px
+	}
+	
+	#footer a
+	{
+		display:block;
+		margin:0;
+		width:auto;
+		height:auto
+	}
+	
+	.menu-footer-menu-container
+	{
+		order:1;
+		left:-20px;
+		position:relative
+	}
+	
+	.footer-center
+	{
+		order:2
+	}
+	
+	#widget-area
+	{
+		order:3
+	}
+}
+
+@media screen and (max-width: 777px) {
+	.main-menu
+	{
+		display:none
+	}
+	
+	.burger-menu-container.active
+	{
+		position:relative;
+		top:0
+	}
+	
+	.menu-toggle
+	{
+		display:block;
+		top:20px;
+		right:20px;
+		z-index:2;
+		cursor:pointer;
+		background-color:transparent;
+		border:none;
+		padding:0
+	}
+	
+	.popup-overlay.hidden
+	{
+		display:none
+	}
+	
+	.popup-overlay.visible
+	{
+		display:flex
+	}
+}
+
+@media screen and (max-width: 440px) {
+	.menu-toggle
+	{
+		width:40px;
+		height:40px;
+		margin-left:40px
+	}
+	
+	.container-header img
+	{
+		width:150px;
+		width:220px;
+		height:auto;
+		display:flex;
+		justify-content:right;
+		margin-left:-300px
+	}
+}
+
+.menu-toggle .line
+{
+	width:30px;
+	height:3px;
+	background-color:#000;
+	display:block;
+	margin:6px auto;
+	transition:background-color .3s ease;
+	width:30px;
+	height:3px;
+	background-color:#000;
+	display:block;
+	margin:6px auto;
+	transition:all .3s ease
+}
+
+.menu-toggle.active .line:nth-child(1)
+{
+	transform:translateY(9px) rotate(45deg)
+}
+
+.menu-toggle.active .line:nth-child(2)
+{
+	opacity:0
+}
+
+.menu-toggle.active .line:nth-child(3)
+{
+	transform:translateY(-9px) rotate(-45deg)
+}
+
+
+
+@media screen and (min-width: 778px) {
+	.menu-toggle,.burger-menu-container
+	{
+		display:none
+	}
+}
+
+
+
+
+
+/* Style pour les champs de formulaire */
+.wpcf7-form-control {
+  width: 263px !important;
+  height: 100%;
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: 1px solid #b8bbc2;
+  box-sizing: border-box;
+  margin: auto;
+  display: block;
+  resize: none;
+}
+
+/* Style pour le champ de message */
+.wpcf7-textarea {
+  height: 300px; /* Ajustez la hauteur selon vos besoins */
+}
+
+/* Style pour le bouton de soumission */
+.wpcf7-submit {
+  background-color: #c7c7c7 !important; /* Couleur de fond primaire */
+  color: #ffffff !important; /* Couleur du texte */
+  border: none !important; /* Pas de bordure */
+  border-radius: 8px !important; /* Coins arrondis */
+  padding: 12px 24px !important; /* Espacement intérieur */
+  font-size: 16px !important; /* Taille du texte */
+  font-weight: 600 !important; /* Poids du texte */
+  text-transform: uppercase !important; /* Texte en majuscules */
+  cursor: pointer !important; /* Curseur pointer */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease !important; /* Transition douce pour les effets */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08) !important; /* Ombre pour l'effet de profondeur */
+}
+
+/* Style pour le bouton de soumission au survol */
+.wpcf7-submit:hover {
+  background-color: #a6a6a6 !important; /* Couleur de fond au survol */
+  transform: translateY(-2px) !important; /* Légère élévation au survol */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.08) !important; /* Ombre accrue pour l'effet de profondeur */
+}
+
+/* Style pour le bouton de soumission à l'activation */
+.wpcf7-submit:active {
+  background-color: #8a8a8a !important; /* Couleur de fond à l'activation */
+  transform: translateY(2px) !important; /* Légère descente à l'activation */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08) !important; /* Réduction de l'ombre pour l'effet de bouton enfoncé */
+}
+
+/* Style pour le conteneur de groupe d'éléments */
+.wpcf7-form-control-wrap {
+  margin-bottom: 15px !important;
+}
+
+/* Centrage du formulaire */
+.wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+/*card photo*/
+
+.photo-item
+{
+	width:100%;
+	max-width:564px;
+	height:495px
+}
+
+
+
+
+
+@keyframes fadeIn_open_list_items {
+	0%
+	{
+		opacity:0;
+		transform:translateY(-10px)
+	}
+	
+	100%
+	{
+		opacity:1;
+		transform:translateY(0)
+	}
+}
+
+@keyframes fadeIn_close_list_items {
+	0%
+	{
+		opacity:1;
+		transform:translateY(0)
+	}
+	
+	100%
+	{
+		opacity:0;
+		transform:translateY(-10px)
+	}
+}
+
+
+
+/* la lightbox */
+
+
+.photo-thumbnail {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-thumbnail img {
+  transition: transform .3s ease;
+}
+
+.photo-thumbnail:hover img {
+  transform: scale(1.1);
+}
+
+.lightbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.416); /* Semi-transparent pour la lightbox */
+  opacity: 0;
+  transition: opacity .3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Assurez-vous que c'est au-dessus des autres éléments */
+}
+
+.photo-thumbnail:hover .lightbox {
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+.lightbox-icon {
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1000;
+  background-color: transparent; /* Assurez-vous qu'il n'y a pas de fond */
+  border: none; /* Supprime toute bordure */
+  outline: none; /* Supprime le contour lors du focus */
+  cursor: pointer; /* Change le curseur en main pour indiquer qu'il est cliquable */
+}
+
+/* Style de base pour l'icône .eye-icon */
+.eye-icon {
+  background-image: url('../images/icon/eyes.png'); /* Assurez-vous que le chemin est correct */
+  background-size: cover; /* Ajuste la taille de l'image pour couvrir l'élément */
+  width: 50px; /* Ajustez la taille de l'icône selon vos besoins */
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  transition: all 0.3s ease; /* Transition pour les effets d'animation */
+}
+
+/* Effet d'agrandissement et de rotation au survol */
+.eye-icon:hover {
+  transform: translate(-50%, -50%) scale(1.2) rotate(360deg);
+}
+
+/* Effet de fond coloré au survol */
+.eye-icon:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 200, 170, 0.3); /* Fond coloré au survol */
+  border-radius: 50%;
+  transform: scale(1); /* Assurez-vous que le fond est visible */
+  transition: all 0.3s ease;
+}
+
+
+/* Supprime l'effet de clic visuel sur les navigateurs qui le supportent */
+.lightbox-icon::-moz-focus-inner {
+  border: 0;
+}
+
+/* Optionnel : supprimer l'effet de tap sur mobile */
+.lightbox-icon {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Optionnel : ajustement pour les icônes spécifiques */
+.eye-icon::before {
+  color: rgba(255, 255, 255, 0); /* Couleur du pseudo-élément avant */
+}
+
+
+
+
+/* Single photo */
+
+.single-photo-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  top: 20px;
+}
+
+.plexibutton2 {
+  display: inline-block;
+  padding: 15px 30px; /* Ajuster le padding selon les besoins */
+  margin: 80px 10px; /* Espacement autour du bouton */
+  background: rgba(255, 255, 255, 0.8); /* Fond blanc transparent */
+  color: #000; /* Couleur du texte */
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure */
+  border-radius: 10px; /* Bords arrondis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+  max-width: 400px; /* Largeur maximale du bouton */
+  width: 100%; /* Largeur du bouton */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  font-weight: bold; /* Texte en gras */
+}
+
+.plexibutton2:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Fond plus opaque au survol */
+  color: #000; /* Couleur du texte au survol */
+}
+
+.plexibutton2:active {
+  transform: scale(0.95); /* Réduit le bouton légèrement lorsqu'il est cliqué */
+}
+
+.plexibutton {
+  display: inline-block;
+  padding: 20px;
+  margin: 20px 10px; /* Ajuster l'espace autour des boutons */
+  background: rgba(255, 255, 255, 0.8); /* Fond blanc transparent */
+  color: #000; /* Couleur du texte */
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure */
+  border-radius: 10px; /* Bords arrondis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+  max-width: 400px; /* Largeur maximale des boutons */
+  width: 50%; /* Largeur relative */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.plexibutton:hover {
+  background-color: rgba(255, 255, 255, 0.9); /* Fond plus opaque au survol */
+  color: #000; /* Couleur du texte au survol */
+}
+
+.plexibutton:active {
+  transform: scale(0.95); /* Réduit le bouton légèrement lorsqu'il est cliqué */
+}
+
+
+.plexiglass-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 800px;
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+.site-link:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.plexiglass-button {
+  margin-top: 30px;
+  font-size: 1.2em;
+  color: #000;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.plexiglass-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+
+/* Style pour l'image dans la section photo-display */
+.photo-display img {
+  width: 100%; /* Ajuste la largeur de l'image pour qu'elle prenne toute la largeur du conteneur */
+  height: auto; /* Maintient les proportions de l'image */
+  border: 5px solid black; /* Bordure noire autour de l'image */
+  border-radius: 10px; /* Coins arrondis pour la bordure */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre pour un effet de profondeur */
+}
+
+
+/* Conteneur pour la photo principale */
+.photo-display img {
+  display: block; /* S'assure que l'image occupe toute la largeur de son conteneur */
+  width: 700px; /* Fixe la largeur de l'image à 700 pixels */
+  margin: 0 auto; /* Centre l'image horizontalement */
+}
+
+/* Description de la photo */
+.single-photo-content .photo-description {
+  background-color: #fff; /* Couleur de fond blanc */
+  color: #000; /* Couleur du texte noir */
+  padding: 20px; /* Padding interne pour espacer le texte du bord */
+  border: 2px solid #000; /* Bordure noire autour de la description */
+  width: 100%; /* S'adapte à la largeur du conteneur parent */
+  max-width: 700px; /* Fixe la largeur maximale à 700 pixels */
+  margin: 20px auto; /* Centre la description horizontalement et ajoute une marge au-dessus et en dessous */
+  box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur totale */
+  text-align: right; /* Justifie le texte à droite */
+  display: block; /* Utilise le modèle de boîte par défaut */
+}
+
+/* Autre carte plexiglass en dessous */
+.plexiglass-card2 {
+  background: rgba(255, 255, 255, 0.3); /* Couleur de fond translucide */
+  backdrop-filter: blur(10px); /* Effet de flou pour imiter le plexiglas */
+  border: 2px solid rgba(255, 255, 255, 0.6); /* Bordure blanche translucide */
+  border-radius: 15px; /* Coins arrondis */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+  padding: 20px; /* Padding interne pour espacer le contenu des bords */
+  width: 100%; /* S'adapte à la largeur du conteneur parent */
+  max-width: 700px; /* Fixe la largeur maximale à 700 pixels */
+  margin: 20px auto; /* Centre la carte horizontalement et ajoute une marge au-dessus et en dessous */
+}
+
+/* Styles pour les informations supplémentaires */
+.additional-info {
+  width: 100%; /* S'adapte à la largeur du conteneur parent */
+  max-width: 700px; /* Fixe la largeur maximale à 700 pixels */
+  margin: 20px auto; /* Centre les informations horizontalement */
+}
+
+
+
+
+
+
+
+
+/*card*/
+
+.title {
+    position: relative;
+    font-family: 'Raleway';
+  
+    font-weight: 300;
+    font-size: 24px;
+    color: #000000;
+    text-align: center;
+    font-size: 24px;
+}
+  .title p {
+    margin-top: 10px; /* Ajustez cette valeur pour rapprocher le paragraphe du titre */
+    font-size: 16px; /* Ajustez la taille du texte si nécessaire */
+}
+  p {
+	line-height: 1.5em;
+  }
+  
+  h1 + p, p + p {
+	margin-top: 10px;
+  }
+  
+
+ .card-container {
+  padding: 40px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+ 
+}
+ .card-wrap {
+	margin: 10px;
+	transform: perspective(800px);
+	transform-style: preserve-3d;
+	cursor: pointer;
+  }
+  .card-wrap:hover .card-info {
+	transform: translateY(0);
+  }
+  .card-wrap:hover .card-info p {
+	opacity: 1;
+  }
+  .card-wrap:hover .card-info, .card-wrap:hover .card-info p {
+	transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .card-wrap:hover .card-info:after {
+	transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
+	opacity: 1;
+	transform: translateY(0);
+  }
+  .card-wrap:hover .card-bg {
+	transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
+	opacity: 0.8;
+  }
+  .card-wrap:hover .card {
+	transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
+	box-shadow: rgba(255, 255, 255, 0.2) 0 0 40px 5px, white 0 0 0 1px, rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset white 0 0 0 6px;
+  }
+  
+  .card {
+    position: relative;
+    flex: 0 0 240px;
+    width: 240px;
+    height: 320px;
+    background-color: #333;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: rgb(255 255 255 / 66%) 0 30px 60px 0, inset #ffffff 0 0 0 5px, inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+    transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    font-family: 'Raleway', sans-serif;
+}
+
+  
+  /* Style pour les icônes */
+.card-icon {
+    position: absolute; /* Positionner les icônes au-dessus du contenu */
+    top: -50px; /* Espacement depuis le haut de la carte */
+    left: 50%;
+    transform: translateX(-50%); /* Centrer horizontalement */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacement entre les icônes */
+    z-index: 2; /* Assurez-vous que les icônes sont au-dessus du contenu de la carte */
+}
+
+.card-icon img {
+    width: 50px; /* Ajustez la taille des icônes pour qu'elles soient petites */
+    height: auto;
+   
+}
+
+
+  .card-bg {
+    opacity: 0.5;
+    position: absolute;
+    top: 0; /* Changez pour 0 pour couvrir toute la carte */
+    left: 0; /* Changez pour 0 pour couvrir toute la carte */
+    width: 100%;
+    height: 100%;
+    padding: 0; /* Assurez-vous qu'aucun padding n'affecte la taille */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Assure que l'image couvre toute la carte */
+    transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95), opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    pointer-events: none;
+}
+  .card-info {
+	padding: 20px;
+	position: absolute;
+	bottom: 0;
+	color: #fff;
+	transform: translateY(40%);
+	transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .card-info p {
+	opacity: 0;
+	text-shadow: black 0 2px 3px;
+	transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .card-info * {
+	
+	z-index: 1;
+  }
+
+  
+
+
+  /*particules*/
+
+.scroll-touch {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+
+input,
+select,
+textarea {
+  -webkit-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+  -ms-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+
+.clear {
+  clear: both;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.opacity-0 {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.opacity-03 {
+  opacity: 0.3 !important;
+}
+
+.opacity-1 {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.global-overlay {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+
+
+
+.overlay.skew-part {
+  -webkit-transform: skew(-25deg, 0deg);
+  -moz-transform: skew(-25deg, 0deg);
+  -ms-transform: skew(-25deg, 0deg);
+  -o-transform: skew(-25deg, 0deg);
+  transform: skew(-25deg, 0deg);
+}
+
+#left-side {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
+  -moz-transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
+  -ms-transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
+  -o-transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
+  transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
+}
+
+#left-side .content {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  padding: 0;
+  top: 50vh;
+  width: 100%;
+  padding: 0 10%;
+  -webkit-transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
+  -moz-transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
+  -ms-transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
+  -o-transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
+  transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* ---- particles.js container ---- */
+
+
+
+#particles-js {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrer verticalement */
+    z-index: -1;
+    left: auto;
+    top: 0;
+    position: fixed; /* Fixe le conteneur pour qu'il reste en place pendant le défilement */
+    width: 1440px; /* Largeur fixe */
+    height: 200%; /* Hauteur double de la fenêtre pour permettre aux particules de descendre */
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; /* Centre le fond */
+    transform: translateY(-50%); /* Centre verticalement en ajustant le conteneur */
+
+}
+
+  
+.social-icons-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 450px;
+  margin: 40px auto;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+.social-icons a {
+  color: rgb(0, 0, 0);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover .social-icon {
+  transform: scale(1.2) rotate(360deg);
+}
+
+.social-icons a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #A9EAFE;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover::before {
+  transform: scale(0.5);
+}
+
+.social-icons a:hover {
+  color: #00c8aa;
+}
+
+@media only screen and (max-width: 1024px) {
+  .overlay {
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .overlay.skew-part {
+    -webkit-transform: skew(0deg, 0deg);
+    -moz-transform: skew(0deg, 0deg);
+    -ms-transform: skew(0deg, 0deg);
+    -o-transform: skew(0deg, 0deg);
+    transform: skew(0deg, 0deg);
+  }
+  #container {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  #stars,
+  #stars2,
+  #stars3 {
+    margin-left: 0 !important;
+  }
+  .brand-logo {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    margin: 25px 0;
+  }
+  .light-btn {
+    padding: 0.7em 0;
+    margin-right: 0;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    max-width: 50%;
+  }
+  .action-btn {
+    padding: 0.7em 0;
+    float: none;
+    margin: 0 auto;
+    max-width: 50%;
+  }
+  #left-side {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 100px 0 150px;
+  }
+  #left-side .content {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: auto;
+    text-align: center;
+  }
+  .social-icons {
+    left: 0;
+    bottom: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  #right-side {
+    position: relative;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    top: 0;
+    width: 100%;
+  }
+  #right-side.hide-right {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  #close-more-info {
+    display: none;
+  }
+  .mCSB_scrollTools {
+    right: 0;
+  }
+  .mCSB_scrollTools-left {
+    right: 0 !important;
+  }
+}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (max-width: 768px) {
+  .light-btn {
+    max-width: 70%;
+    min-width: 60%;
+  }
+  .action-btn {
+    max-width: 70%;
+    min-width: 60%;
+  }
+  .photo-line figure {
+    padding: 0;
+    margin: 0 0 20px !important;
+    width: 100% !important;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  }
+  .info-contact .item-map:first-child {
+    padding-left: 0;
+  }
+  .info-contact .item-map:last-child {
+    padding-right: 0;
+  }
+  .dialog__content {
+    width: 80%;
+    max-width: 80%;
+    min-width: 75%;
+  }
+  .dialog .dialog-inner {
+    padding: 40px 20px 90px;
+    overflow: hidden;
+  }
+}
+
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (max-width: 480px) {
+  #left-side {
+    padding: 50px 0 100px;
+  }
+  #left-side .content {
+    padding: 0 3%;
+  }
+  #left-side.minimal-phone {
+    height: 100vh;
+  }
+  h1.text-intro {
+    font-size: 30px;
+  }
+  h2.text-intro {
+    font-size: 18px;
+  }
+  .light-btn {
+    max-width: 80%;
+    min-width: 70%;
+  }
+  .action-btn {
+    max-width: 80%;
+    min-width: 70%;
+  }
+  .dialog__content {
+    width: 95%;
+    max-width: 95%;
+    min-width: 75%;
+  }
+  .dialog .close-newsletter {
+    top: 2px;
+    right: 5px;
+  }
+  .dialog .dialog-inner {
+    padding: 40px 20px 50px;
+  }
+  .dialog .dialog-inner h4 {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  #subscribe .block-message {
+    padding: 5px 2px;
+  }
+  #subscribe p.notify-valid {
+    font-size: 12px;
+  }
+}
+
+
+/* Only for tablet in landscape mode */
+
+
+/* Only for phone in landscape mode */
+
+@media screen and (max-device-width: 667px) and (orientation: landscape) {
+  #left-side {
+    padding: 50px 0 100px;
+  }
+  h1.text-intro {
+    font-size: 30px;
+  }
+  h2.text-intro {
+    font-size: 18px;
+  }
+  .dialog__content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 75%;
+  }
+  .dialog .close-newsletter {
+    top: 2px;
+    right: 5px;
+  }
+  .dialog .dialog-inner {
+    padding: 40px 20px 50px;
+  }
+  .dialog .dialog-inner h4 {
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+  #subscribe #notifyMe {
+    margin-top: 10px;
+  }
+  #subscribe #notifyMe .form-group .form-control {
+    width: 70%;
+    margin: 0;
+    float: left;
+  }
+  #subscribe #notifyMe .form-group button.submit {
+    width: 30%;
+    margin: 0;
+    float: left;
+  }
+  #subscribe .block-message {
+    padding: 5px 2px;
+  }
+  #subscribe p.notify-valid {
+    font-size: 12px;
+  }
+}  
+
+
+
+
+ 
+/* Styles pour les nouvelles cartes */
+
+/* Style pour la grande carte englobante */
+.large-card {
+    width: 100%;
+    max-width: 820px; /* Ajustez la largeur maximale selon vos besoins */
+    background: rgba(255, 255, 255, 0.1); /* Fond blanc transparent */
+    border-radius: 20px; /* Coins arrondis pour l'effet plexiglass */
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 8px, rgba(0, 0, 0, 0.2) 0 10px 20px; /* Ombre subtile */
+    backdrop-filter: blur(10px); /* Effet de flou pour l'arrière-plan */
+    padding: 20px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure subtile */
+    box-sizing: border-box; /* Assure que le padding n'affecte pas la largeur totale */
+    display: flex;
+    flex-direction: column; /* Aligne les éléments en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
+}
+
+
+/* Assurez-vous que la section englobante est bien configurée */
+.additional-cards {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    min-height: 50%; /* Occupe toute la hauteur de l'écran */
+    padding: 40px 80px; /* Ajustez le padding si nécessaire */
+}
+
+
+
+.subtitle {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.card-item {
+    flex: 0 0 calc(25% - 20px); /* Quatre cartes par ligne, avec espace entre elles */
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 200px; /* Largeur fixe pour chaque carte */
+}
+
+.card-item:hover {
+    transform: scale(1.05);
+}
+
+.card-image {
+    width: 100%;
+    height: 150px; /* Hauteur fixe pour les images */
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+}
+
+.card-description {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Media Queries pour assurer la responsivité */
+@media (max-width: 1200px) {
+    .card-item {
+        flex: 0 0 calc(33.33% - 20px); /* Trois cartes par ligne pour les écrans moyens */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-item {
+        flex: 0 0 calc(50% - 20px); /* Deux cartes par ligne pour les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-item {
+        flex: 0 0 100%; /* Une carte par ligne pour les très petits écrans */
+    }
+}
+
+
+.plexiglass-card2 {
+
+    background: rgba(255, 255, 255, 0.1); /* Fond blanc transparent */
+    border-radius: 20px; /* Coins arrondis pour l'effet plexiglass */
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 8px, rgba(0, 0, 0, 0.2) 0 10px 20px; /* Ombre subtile */
+    backdrop-filter: blur(10px); /* Effet de flou pour l'arrière-plan */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure subtile */
+    padding: 30px;
+    margin: 20px 5px; /* Espacement vertical et horizontal ajusté */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 700px; /* Largeur maximale */
+    box-sizing: border-box; /* Assure que le padding n'affecte pas la largeur totale */
+  
+    margin: auto; /* Centre horizontalement */
+}
+
+
+
+/* Style pour la carte plexiglass */
+.plexiglass-card {
+    background: rgba(255, 255, 255, 0.1); /* Fond blanc transparent */
+    border-radius: 20px; /* Coins arrondis pour l'effet plexiglass */
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 8px, rgba(0, 0, 0, 0.2) 0 10px 20px; /* Ombre subtile */
+    backdrop-filter: blur(10px); /* Effet de flou pour l'arrière-plan */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure subtile */
+    padding: 20px;
+    margin: 20px 0; /* Espacement vertical */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 820px; /* Largeur maximale */
+    box-sizing: border-box; /* Assure que le padding n'affecte pas la largeur totale */
+    margin: auto; /* Centre horizontalement */
+    height: 100%;
+}
+
+/* Style spécifique pour la section de contact */
+.contact-section {
+    padding: 50px 20px;
+  
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-card {
+    margin-bottom: 20px;
+}
+
+.profile-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.profile-description {
+    font-size: 1rem;
+    color: #666;
+}
+
+.contact-form-card {
+    width: 100%;
+}
+
+.form-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+/* Photo grid styling */
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 20px; /* Space between items */
+    justify-content: center; /* Center the grid items */
+}
+
+/* Individual photo item */
+.photo-item {
+    flex: 0 0 calc(25% - 20px); /* Adjust width of items */
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 200px;
+    max-height: 300px; /* Set a max-height for the card */
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+}
+
+/* Thumbnail styling */
+.photo-thumbnail {
+    flex: 0 1 auto; /* Allow thumbnail to grow as needed */
+    overflow: hidden; /* Hide overflow */
+}
+
+.photo-thumbnail img {
+    width: 100%; /* Make image fit the container width */
+    height: 150px; /* Fixed height for images */
+    object-fit: cover; /* Ensure image covers the area */
+}
+
+/* Lightbox styling */
+.lightbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* Hidden by default */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+.photo-item:hover .lightbox {
+    display: flex; /* Show lightbox on hover */
+}
+
+/* Lightbox content styling */
+.lightbox-content {
+    color: #fff;
+    text-align: center;
+}
+
+.lightbox-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.lightbox-icon {
+    display: inline-block;
+    margin: 5px;
+}
+
+.eye-icon::before {
+    content: "\f06e"; /* FontAwesome eye icon */
+    font-family: FontAwesome;
+}
+
+.fullscreen-icon::before {
+    content: "\f065"; /* FontAwesome fullscreen icon */
+    font-family: FontAwesome;
+}
+
+.lightbox-category {
+    margin-top: 10px;
+}
+
+.lightbox-category a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+/* Card content styling */
+.card-content {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    flex: 1; /* Allow content to grow */
+}
+
+.card-title {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.card-description {
+    font-size: 0.9em;
+    color: #555;
+}
+
+
+
+/*navarrow*/
+
+.navigation-arrow {
+  position: absolute;
+  top: 20%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  width: 50px; /* Taille de l'image de la flèche */
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-arrow {
+  left: 10px; /* Positionnez la flèche gauche */
+}
+
+.right-arrow {
+  right: 10px; /* Positionnez la flèche droite */
+}
+
+.left-arrow img,
+.right-arrow img {
+  width: 100%; /* Assurez-vous que les images prennent toute la taille de leur conteneur */
+  height: auto;
+}
+.photo-caption {
+  padding: 10px;
+  text-align: center; /* Centrer le texte sous la photo */
+}
+
+.photo-caption {
+  padding: 10px;
+  text-align: center; /* Centre le texte sous l'image */
+}
+
+
+
+.photo-title {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 2px;
+    text-align: center; /* Centrer le texte horizontalement */
+    padding: 0 20px; /* Ajouter un padding de 20px sur les côtés gauche et droit */
+}
+
+.photo-description {
+  font-size: 1em;
+  margin-bottom: 20px;
+  padding: 0 20px; /* Ajouter un padding de 20px sur les côtés gauche et droit */
+  text-align-last: left; /* Aligner le dernier texte à gauche */
+}
+
+/* Styles pour le titre de la photo dans la page unique */
+.single-photo-content .photo-title {
+  font-size: 2.5em; /* Taille du titre pour la page photo */
+  margin-bottom: 20px;
+  color: #333; /* Couleur du titre */
+}
+
+/* Styles pour le titre dans la section du portfolio */
+#portfolio-section .plexiglass-card2 .title {
+  font-size: 1.5em; /* Taille du titre pour la section portfolio */
+  color: #000; /* Couleur du titre */
+  margin-bottom: 20px;
+}
+
+/* Assurez-vous que les autres titres ne sont pas affectés */
+h1, h2, h3, h4, h5, h6 {
+  /* Styles globaux pour les titres si nécessaire */
+  margin: 0;
+  padding: 0;
+  color: inherit; /* Hérite de la couleur des éléments parent */
+}
