@@ -11,12 +11,58 @@ jQuery(document).ready(function ($) {
     });
 
     // Gestion des liens "Contact"
-    $('.open-popup').on('click', function(e) {
+    $('.open-popup, a[href="#contact-section"]').on('click', function(e) {
         e.preventDefault();
-        // Rediriger vers la section de contact sur la page d'accueil
-        window.location.href = 'http://localhost:10101/#contact-section';
+        var target = $('#contact-section');
+
+        if (target.length) {
+            // Si nous sommes sur la page d'accueil, faire défiler jusqu'à la section de contact
+            $('html, body').animate({
+                scrollTop: target.offset().top - 50 // Ajout d'un décalage de 50px
+            }, 1000);
+        } else {
+            // Pour toute autre page, rediriger vers la page d'accueil + section de contact
+            window.location.href = '/#contact-section';
+        }
     });
 
-    // Ajout de l'écouteur d'événement passif pour les appareils tactiles
-    document.addEventListener('touchstart', function() {}, { passive: true });
+    // Ajout d'un délai pour s'assurer que la page est complètement chargée
+    setTimeout(function() {
+        // Vérifier si nous avons été redirigés avec un hash dans l'URL
+        if (window.location.hash === '#contact-section') {
+            var target = $('#contact-section');
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 50 // Ajout d'un décalage de 50px
+                }, 1000);
+            }
+        }
+    }, 500);
+
+
+    if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+            // Votre configuration particles.js ici
+        });
+    } else {
+        console.warn('particles.js n\'est pas chargé');
+    }
+
+
+// Gestion du bouton "Retour en haut"
+var $scrollTopButton = $('.footer-icon[href="#top"]');
+
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 300) {
+        $scrollTopButton.addClass('show');
+    } else {
+        $scrollTopButton.removeClass('show');
+    }
+});
+
+$scrollTopButton.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop : 0}, 800);
+});
+
 });

@@ -1,20 +1,22 @@
 <footer id="footer">
     <div class="footer-container">
-        <div class="menu-footer-menu-container">
-            <ul id="menu-footer-menu" class="menu">
-                <div class="privacy-policy">
-                    <a  rel="privacy-policy" href="<?php echo esc_url( home_url( 'mentions-legales/' ) ); ?>">Mentions Légales</a>
-                </div>
-            </ul>
+        <div class="footer-menu">
+            <a href="<?php echo esc_url( home_url( 'cv' ) ); ?>" class="footer-icon" aria-label="CV">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/icon/cvoam.svg" alt="CV">
+            </a>
+            <a href="<?php echo esc_url( home_url( 'mentions-legales/' ) ); ?>" class="footer-icon" aria-label="Mentions légales">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/icon/mentions.svg" alt="Mentions légales">
+            </a>
+            <a href="<?php echo esc_url( home_url( 'privacy-policy/' ) ); ?>" class="footer-icon" aria-label="Politique de confidentialité">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/icon/privacy2.svg" alt="Politique de confidentialité">
+            </a>
+            <!-- Ajouter le lien de retour en haut de la page -->
+            <a href="#top" class="footer-icon" aria-label="Retour en haut">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/icon/up.svg" alt="Retour en haut">
+            </a>
         </div>
-        <div class="footer-center">
-            <a href="<?php echo esc_url( home_url( 'privacy-policy/' ) ); ?>">Vie Privée</a>
-        </div>
-        <aside id="widget-area">
-            <div id="block-9" class="block">
-                <a class="has-text-align-center">Tous droits réservés</a>
-            </div>
-        </aside>
     </div>
 </footer>
+
+
 

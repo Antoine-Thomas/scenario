@@ -1,19 +1,14 @@
 <?php
-/**
- * Template Name: photoloader
- *
- * @package Scenario
- */
-
- function load_photos_by_selection() {
+function load_photos_by_selection() {
     $date_order = isset($_POST['date_order']) ? sanitize_text_field($_POST['date_order']) : 'DESC';
     
     // Définir les arguments pour la requête
     $args = array(
         'post_type' => 'photo',
         'posts_per_page' => -1, // Charger toutes les photos
-        'orderby' => 'date',
-        'order' => $date_order,
+        'meta_key' => 'numero', // Clé du champ ACF
+        'orderby' => 'meta_value_num', // Trier par valeur numérique du champ ACF
+        'order' => 'ASC', // Ordre croissant
     );
     
     // Ajouter des filtres de taxonomie si nécessaire
@@ -32,6 +27,7 @@
             $photo = get_field('photo');
             $titre = get_field('titre');
             $description = get_field('description');
+            $numero = get_field('numero'); // Récupérer le champ ACF "Numero"
 
             echo '<div class="photo-item">';
             if ($photo) {
@@ -43,12 +39,15 @@
                 echo '<a href="' . get_permalink() . '" class="lightbox-icon eye-icon" title="Voir le détail de la photo"></a>';
                 echo '</div></div></div>';
 
-                // Ajout du titre et de la description
+                // Ajout du titre, de la description et du numéro
                 if ($titre) {
                     echo '<div class="photo-title">' . esc_html($titre) . '</div>';
                 }
                 if ($description) {
                     echo '<div class="photo-description">' . esc_html($description) . '</div>';
+                }
+                if ($numero) {
+                    echo '<div class="photo-numero">Numéro : ' . esc_html($numero) . '</div>';
                 }
             }
             echo '</div>';

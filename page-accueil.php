@@ -111,7 +111,7 @@ get_header();
             <!-- Portfolio Section -->
             <section id="portfolio-section" class="portfolio-section">
                 <div class="plexiglass-card2">
-                    <h2 class="title">SITES PORTOFOLIO</h2>
+                    <h2 class="title">PORTOFOLIO</h2>
                 </div>
             </section>
 
@@ -133,7 +133,7 @@ get_header();
                     <div class="profile-card">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/portrait.webp" alt="Thomas Leroyer" class="profile-photo">
                        
-                        <div class="plexiglass-card2">
+                        <div class="plexiglass-card3">
                         <p class="subtitle">Prêt à démarrer votre projet web ?
                                                        Profitez de mon expertise en développement web en me contactant.
                                                        Je suis là pour vous donner toutes les informations.

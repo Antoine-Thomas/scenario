@@ -34,11 +34,11 @@ function scenario_enqueue_scripts() {
     wp_enqueue_script('scenario-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0', true);
     wp_enqueue_script('scenario-photosloader', get_template_directory_uri() . '/js/photosloader.js', array('jquery'), null, true);
     wp_enqueue_script('scenario-previews', get_template_directory_uri() . '/js/previews.js', array('jquery'), null, true);
-   
     wp_enqueue_script('particles-js', get_template_directory_uri() . '/js/particles.js', array('jquery'), null, true);
    
     // Enfilez le script des particules
     wp_enqueue_script('particles-js', 'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js', array(), null, true);
+    
 
     // Localize scripts
     wp_localize_script('scenario-script', 'nmAjax', array(
