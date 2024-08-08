@@ -46,9 +46,7 @@ function load_photos_by_selection() {
                 if ($description) {
                     echo '<div class="photo-description">' . esc_html($description) . '</div>';
                 }
-                if ($numero) {
-                    echo '<div class="photo-numero">Numéro : ' . esc_html($numero) . '</div>';
-                }
+              
             }
             echo '</div>';
         }

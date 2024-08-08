@@ -42,16 +42,7 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    // Initialisation de particles.js si disponible
-    if (typeof particlesJS !== 'undefined') {
-        particlesJS('particles-js', {
-            // Votre configuration particles.js ici
-        });
-    } else {
-        console.warn('particles.js n\'est pas chargé');
-    }
-
-    // Gestion du bouton "Retour en haut"
+     // Gestion du bouton "Retour en haut"
     var $scrollTopButton = $('.footer-icon[href="#top"]');
 
     $(window).scroll(function() {

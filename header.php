@@ -12,7 +12,7 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    <div id="particles-js"></div>
+
     <!-- Header -->
     <header id="header" class="header">
         <div class="container-header">

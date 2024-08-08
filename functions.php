@@ -29,15 +29,11 @@ function scenario_enqueue_scripts() {
         'scenario-script' => '/js/script.js',
         'scenario-photosloader' => '/js/photosloader.js',
         'scenario-previews' => '/js/previews.js',
-        'particles-js' => '/js/particles.js'
     );
 
     foreach ($scripts as $handle => $src) {
         wp_enqueue_script($handle, get_template_directory_uri() . $src, array('jquery'), null, true);
     }
-
-    // Particles.js from CDN
-    wp_enqueue_script('particles-js-cdn', 'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js', array(), null, true);
 
     // Localize scripts
     wp_localize_script('scenario-script', 'nmAjax', array('ajaxUrl' => admin_url('admin-ajax.php')));
@@ -90,6 +86,21 @@ add_filter('the_content', 'add_lazy_loading_to_images');
 add_filter('post_thumbnail_html', 'add_lazy_loading_to_images');
 add_filter('get_avatar', 'add_lazy_loading_to_images');
 add_filter('widget_text', 'add_lazy_loading_to_images');
+
+// Ajouter une image de fond sur toutes les pages
+function scenario_body_background() {
+    $background_image_url = get_template_directory_uri() . '/images/fond.webp';
+    echo "<style>
+        body {
+            background-image: url('$background_image_url');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>";
+}
+add_action('wp_head', 'scenario_body_background');
 
 // Inclure d'autres fichiers API REST nécessaires
 require_once get_template_directory() . '/inc/photosloader.php';

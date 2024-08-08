@@ -4,9 +4,7 @@
 
     // Fonction pour charger les photos en fonction des sélections de catégorie, format et ordre de date
     function loadPhotosBySelection() {
-        const categorieId = $('#categorie_id').val();
-        const formatId = $('#format_id').val();
-        const dateOrder = $('#date').val() || "ASC"; // Par défaut, ordre ascendant si aucune valeur sélectionnée
+      const dateOrder = $('#date').val() || "ASC"; // Par défaut, ordre ascendant si aucune valeur sélectionnée
 
         const args = {
             action: 'load_photos_by_selection',
@@ -31,10 +29,9 @@
     }
 
     function initializeFeatures() {
-        $('.custom-dropdown .list_items_filter .list_item').off('click').on('click', function() {
-            const $dropdown = $(this).closest('.custom-dropdown');
-            const $selectedValue = $dropdown.find('.selected-value');
-            const $hiddenInput = $dropdown.find('input[type="hidden"]');
+        $('.list_items_filter .list_item').off('click').on('click', function() {
+         
+          
 
             const selectedValue = $(this).data('value');
             $selectedValue.text($(this).text());
