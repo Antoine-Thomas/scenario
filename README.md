@@ -1,10 +1,16 @@
-# Site Scenario
+# SCENARIO – Mon Site de Développeur Web
 
-![Logo Scenario](https://github.com/Antoine-Thomas/Scenario/blob/main/images/logo_scenario.png)
+Bienvenue sur **SCENARIO**, mon portfolio en ligne où je présente mes compétences et projets en tant que développeur web spécialisé en WordPress.
 
-## Description
+![Logo de SCENARIO](https://github.com/Antoine-Thomas/scenario/blob/main/images/portofolio/logo.png)
 
-**Site Scenario** est une plateforme dédiée à la photographie, mettant en avant les œuvres de l'artiste Scenario. Les visiteurs peuvent explorer différentes catégories de photos, voir les détails de chaque image, et filtrer les photos par catégorie, format et date.
+## 🚀 Présentation du Projet
+
+**SCENARIO** est conçu pour :
+- **Présenter mes compétences techniques :** Découvrez mes réalisations, maîtrises en HTML, CSS, JavaScript, et PHP.
+- **Démontrer mes projets :** Un portfolio interactif avec des détails sur chaque projet réalisé.
+- **Offrir une expérience utilisateur fluide :** Un site responsive, professionnel, avec des animations élégantes.
+
 
 ## Structure du Site
 
