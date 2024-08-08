@@ -43,7 +43,7 @@ Bienvenue sur **SCENARIO**, mon portfolio en ligne où je présente mes compéte
    git clone https://github.com/Antoine-Thomas/Scenario.git
 ## 🌐 Liens Utiles
 
-- **Site Web :** [Visitez SCENARIO](https://searching-murphy.com)
+- **Site Web :** [Visitez SCENARIO](https://www.scenario.searching-murphy.com/)
 - **Design Canva du Site :** [Voir le Design](https://www.canva.com/design/DAGNRL8y7Ug/DCHVWggawHU_69rp-eMr-A/view?utm_content=DAGNRL8y7Ug&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 
 ## 💻 Techniques Utilisées
