@@ -20,6 +20,7 @@ get_header();
 
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
+        <div id="particles-js"></div>
             <!-- Hero Section -->
             <section id="hero-section" class="hero">
                 <div class="banner">
@@ -38,7 +39,7 @@ get_header();
                 </div>
             </section>
 
-            <div id="particles-js"></div>
+         
 
             <!-- Skills Section -->
             <div class="title-container">
@@ -49,7 +50,7 @@ get_header();
             <div id="app" class="card-container">
     <div class="card-wrap">
         <div class="card">
-            <div class="card-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/portofolio/banner.jpg');"></div>
+            <div class="card-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/portofolio/banner.webp');"></div>
             <div class="card-info">
                 <div class="card-icon">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/icon/html5.png" alt="HTML5 Icon">
@@ -63,7 +64,7 @@ get_header();
     </div>
     <div class="card-wrap">
         <div class="card">
-            <div class="card-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/portofolio/black.jpg');"></div>
+            <div class="card-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/portofolio/black.webp');"></div>
             <div class="card-info">
                 <div class="card-icon">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/icon/sql.png" alt="SQL Icon">
@@ -76,7 +77,7 @@ get_header();
     </div>
     <div class="card-wrap">
         <div class="card">
-            <div class="card-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/portofolio/pop.png');"></div>
+            <div class="card-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/portofolio/pop.webp');"></div>
             <div class="card-info">
                 <div class="card-icon">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/icon/seo.png" alt="SEO Icon">

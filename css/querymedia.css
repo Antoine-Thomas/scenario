@@ -267,19 +267,59 @@ Author URI: https://www.searching-murphy.com/
     }
   }
   
-  
-  
-/* Media Query pour les écrans de 320px à 800px */
+/* Media Query pour les écrans de 320px à 873px */
 @media (min-width: 320px) and (max-width: 873px) {
-    .photo-grid {
+  .large-card {
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
       flex-direction: column;
+      align-items: center;
+      width: 90%;
+      max-width: 500px;
+      margin: 0 auto;
   }
-  
+
+  .photo-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 20px;
+  }
+
+  .photo-item {
+      width: 750px; /* Largeur fixe pour chaque carte */
+      height: 500px; /* Hauteur fixe pour les petits écrans */
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+  }
+
+  .photo-thumbnail {
+      height: 50%; /* La photo prend la moitié de la hauteur de la carte */
+      overflow: hidden;
+  }
+
+  .photo-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .card-content {
+      padding: 15px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
 }
+
+
   
   /* Media Queries pour assurer la responsivité */
   @media (max-width: 1200px) {

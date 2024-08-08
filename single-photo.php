@@ -12,6 +12,7 @@ get_header();
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main">
+    <div id="particles-js"></div>
         <article id="post-<?php the_ID(); ?>" <?php post_class('single-photo-content'); ?>>
             <?php
             $prev_post = get_previous_post();

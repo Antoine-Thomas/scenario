@@ -1,45 +1,48 @@
 jQuery(document).ready(function ($) {
-    // Smooth scrolling pour les liens d'ancrage
-    $('a[href^="#"]').on('click', function(event) {
-        var target = $(this.getAttribute('href'));
+    // Fonction de défilement fluide
+    function smoothScroll(target, offset = 0) {
         if (target.length) {
-            event.preventDefault();
-            $('html, body').stop().animate({
-                scrollTop: target.offset().top
+            var targetPosition = target.offset().top - offset;
+            $('html, body').animate({
+                scrollTop: Math.max(0, targetPosition)
             }, 1000);
         }
-    });
+    }
 
-    // Gestion des liens "Contact"
-    $('.open-popup, a[href="#contact-section"]').on('click', function(e) {
-        e.preventDefault();
+    // Fonction pour gérer le défilement vers la section de contact
+    function handleContactScroll(e) {
+        if (e) e.preventDefault();
         var target = $('#contact-section');
 
         if (target.length) {
-            // Si nous sommes sur la page d'accueil, faire défiler jusqu'à la section de contact
-            $('html, body').animate({
-                scrollTop: target.offset().top - 50 // Ajout d'un décalage de 50px
-            }, 1000);
+            var headerHeight = $('header').outerHeight() || 0;
+            smoothScroll(target, headerHeight + 20);
         } else {
-            // Pour toute autre page, rediriger vers la page d'accueil + section de contact
             window.location.href = '/#contact-section';
+        }
+    }
+
+    // Gestion des clics sur les liens d'ancrage
+    $('a[href^="#"]').not('[href="#top"]').on('click', function(event) {
+        event.preventDefault();
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+            var headerHeight = $('header').outerHeight() || 0;
+            smoothScroll(target, headerHeight + 20);
         }
     });
 
-    // Ajout d'un délai pour s'assurer que la page est complètement chargée
-    setTimeout(function() {
-        // Vérifier si nous avons été redirigés avec un hash dans l'URL
+    // Gestion des liens "Contact" et redirection
+    $('.open-popup, a[href="#contact-section"]').on('click', handleContactScroll);
+
+    // Vérification du hash dans l'URL après chargement complet
+    $(window).on('load', function() {
         if (window.location.hash === '#contact-section') {
-            var target = $('#contact-section');
-            if (target.length) {
-                $('html, body').animate({
-                    scrollTop: target.offset().top - 50 // Ajout d'un décalage de 50px
-                }, 1000);
-            }
+            setTimeout(handleContactScroll, 100);
         }
-    }, 500);
+    });
 
-
+    // Initialisation de particles.js si disponible
     if (typeof particlesJS !== 'undefined') {
         particlesJS('particles-js', {
             // Votre configuration particles.js ici
@@ -48,21 +51,15 @@ jQuery(document).ready(function ($) {
         console.warn('particles.js n\'est pas chargé');
     }
 
+    // Gestion du bouton "Retour en haut"
+    var $scrollTopButton = $('.footer-icon[href="#top"]');
 
-// Gestion du bouton "Retour en haut"
-var $scrollTopButton = $('.footer-icon[href="#top"]');
+    $(window).scroll(function() {
+        $scrollTopButton.toggleClass('show', $(this).scrollTop() > 300);
+    });
 
-$(window).scroll(function() {
-    if ($(this).scrollTop() > 300) {
-        $scrollTopButton.addClass('show');
-    } else {
-        $scrollTopButton.removeClass('show');
-    }
-});
-
-$scrollTopButton.on('click', function(e) {
-    e.preventDefault();
-    $('html, body').animate({scrollTop : 0}, 800);
-});
-
+    $scrollTopButton.on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, 1000);
+    });
 });

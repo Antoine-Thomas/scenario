@@ -2,64 +2,53 @@ jQuery(document).ready(function ($) {
     particlesJS('particles-js', {
         "particles": {
             "number": {
-                "value": 180,
+                "value": 40, // Réduit davantage le nombre de particules
                 "density": {
                     "enable": true,
                     "value_area": 800
                 }
             },
             "color": {
-                "value": "#000000" // Couleur noire
+                "value": "#000000"
             },
             "shape": {
-                "type": "star",
+                "type": "circle", // Utilise une forme plus simple
                 "stroke": {
                     "width": 0,
-                    "color": "#000000" // Couleur des lignes de contour des particules
-                },
-                "polygon": {
-                    "nb_sides": 6 // Ajustez le nombre de côtés pour les étoiles
+                    "color": "#000000"
                 }
             },
             "opacity": {
                 "value": 0.5,
                 "random": false,
                 "anim": {
-                    "enable": true,
-                    "speed": 2,
-                    "opacity_min": 0.2,
-                    "sync": false
+                    "enable": false // Désactive l'animation de l'opacité
                 }
             },
             "size": {
-                "value": 3, // Augmentez la taille des particules si elles sont trop petites
+                "value": 3,
                 "random": true,
                 "anim": {
-                    "enable": false,
-                    "speed": 40,
-                    "size_min": 0.1,
-                    "sync": false
+                    "enable": false
                 }
             },
             "line_linked": {
                 "enable": true,
-                "distance": 100,
-                "color": "#000000", // Couleur des lignes de connexion
-                "opacity": 0.8,
-                "width": 1.5
+                "distance": 150, // Augmente la distance entre les lignes
+                "color": "#000000",
+                "opacity": 0.4,
+                "width": 1
             },
             "move": {
                 "enable": true,
-                "speed": 1,
+                "speed": 0.5, // Réduit la vitesse de déplacement
                 "direction": "none",
                 "random": false,
                 "straight": false,
                 "out_mode": "out",
-                "bounce": true,
+                "bounce": false,
                 "attract": {
-                    "enable": true,
-                    "rotateX": 600,
-                    "rotateY": 1200
+                    "enable": false // Désactive l'attraction
                 }
             }
         },
@@ -68,44 +57,25 @@ jQuery(document).ready(function ($) {
             "events": {
                 "onhover": {
                     "enable": true,
-                    "mode": "bubble"
+                    "mode": "grab"
                 },
                 "onclick": {
-                    "enable": true,
-                    "mode": "repulse"
+                    "enable": false // Désactive l'interaction au clic
                 },
                 "resize": true
             },
             "modes": {
                 "grab": {
-                    "distance": 100,
+                    "distance": 140,
                     "line_linked": {
                         "opacity": 1
                     }
-                },
-                "bubble": {
-                    "distance": 150,
-                    "size": 8,
-                    "duration": 20,
-                    "opacity": 0.5,
-                    "speed": 2
-                },
-                "repulse": {
-                    "distance": 135,
-                    "duration": 2
-                },
-                "push": {
-                    "particles_nb": 10
-                },
-                "remove": {
-                    "particles_nb": 2
                 }
             }
         },
-        "retina_detect": true
+        "retina_detect": false // Désactive la détection Retina
     });
 });
-
 
 
 

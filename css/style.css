@@ -141,11 +141,17 @@ Author URI: https://www.searching-murphy.com/
 
 body {
     font-family: 'Raleway', sans-serif;
-    background: #ffffff;
     color: #23282d;
     max-width: 1440px;
     margin: 0 auto; /* Centre le contenu horizontalement */
-   box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+    background-image: url('<?php echo get_template_directory_uri(); ?>/images/fond.webp');
+    background-size: cover; /* Assure que l'image couvre tout l'écran */
+    background-position: center center; /* Centre l'image de fond */
+    background-repeat: no-repeat; /* Évite la répétition de l'image */
+    background-attachment: fixed; /* L'image reste en place lors du scroll */
+
+
 }
 
 element.style {
@@ -664,12 +670,6 @@ footer {
 }
 
 
-
-
-
-
-
-
   /* Style pour les champs de formulaire */
 .wpcf7-form-control {
   width: 263px !important;
@@ -728,17 +728,6 @@ footer {
   flex-direction: column;
   align-items: center;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* la lightbox */
@@ -856,8 +845,6 @@ footer {
 }
 
 
-
-
 /* Single photo */
 
 .single-photo-content {
@@ -872,8 +859,6 @@ footer {
   position: relative;
 
 }
-
-
 
 
 .plexibutton2 {
@@ -965,6 +950,7 @@ transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 
 
 /* Style pour l'image dans la section photo-display */
+
 .photo-display img {
   width: 100%; /* Ajuste la largeur de l'image pour qu'elle prenne toute la largeur du conteneur */
   height: auto; /* Maintient les proportions de l'image */
@@ -972,7 +958,6 @@ transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
   border-radius: 10px; /* Coins arrondis pour la bordure */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre pour un effet de profondeur */
 }
-
 
 
 /* Description de la photo */
@@ -1578,112 +1563,108 @@ textarea {
 }
 
 
-
-
-
-/* Only for tablet in landscape mode */
-
-
-/* Only for phone in landscape mode */
-
-
-
-
-
-
- 
-/* Styles pour les nouvelles cartes */
-
 /* Style pour la grande carte englobante */
 .large-card {
-   
-    max-width: 820px; /* Ajustez la largeur maximale selon vos besoins */
-    background: rgba(255, 255, 255, 0.1); /* Fond blanc transparent */
-    border-radius: 20px; /* Coins arrondis pour l'effet plexiglass */
-    overflow: hidden;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 8px, rgba(0, 0, 0, 0.2) 0 10px 20px; /* Ombre subtile */
-    backdrop-filter: blur(10px); /* Effet de flou pour l'arrière-plan */
-    padding: 20px;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure subtile */
-    box-sizing: border-box; /* Assure que le padding n'affecte pas la largeur totale */
-    display: flex;
-    flex-direction: column; /* Aligne les éléments en colonne */
-    align-items: center; /* Centre les éléments horizontalement */
+  max-width: 820px; /* Ajustez la largeur maximale selon vos besoins */
+  background: rgba(255, 255, 255, 0.1); /* Fond blanc transparent */
+  border-radius: 20px; /* Coins arrondis pour l'effet plexiglass */
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 8px, rgba(0, 0, 0, 0.2) 0 10px 20px; /* Ombre subtile */
+  backdrop-filter: blur(10px); /* Effet de flou pour l'arrière-plan */
+  padding: 20px;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Bordure plus visible */
+  box-sizing: border-box; /* Assure que le padding n'affecte pas la largeur totale */
+  display: flex;
+  flex-direction: column; /* Aligne les éléments en colonne */
+  align-items: center; /* Centre les éléments horizontalement */
 }
-
 
 /* Assurez-vous que la section englobante est bien configurée */
 .additional-cards {
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    min-height: 50%; /* Occupe toute la hauteur de l'écran */
-    padding: 40px 20px; /* Ajustez le padding si nécessaire */
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  min-height: 50%; /* Occupe toute la hauteur de l'écran */
+  padding: 40px 20px; /* Ajustez le padding si nécessaire */
 }
 
-
-
 .subtitle {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+  font-size: 1.5em;
+  margin-bottom: 20px;
 }
 
 .card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  flex-direction: row;
 }
 
-.card-item {
-    flex: 0 0 calc(25% - 20px); /* Quatre cartes par ligne, avec espace entre elles */
-    box-sizing: border-box;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    max-width: 200px; /* Largeur fixe pour chaque carte */
+/* Photo grid styling */
+.photo-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 40px; /* Space between items */
+  justify-content: center; /* Center the grid items */
 }
 
-.card-item:hover {
-    transform: scale(1.05);
+/* Individual photo item */
+.photo-item {
+  flex: 0 0 calc(33.33% - 40px); /* Adjust width of items to fit three per row */
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  max-width: calc(33.33% - 40px); /* Ensure the max-width is consistent with the flex-basis */
+  height: 300px; /* Set a fixed height for the card */
+  display: flex;
+  flex-direction: column; /* Align items vertically */
 }
 
-.card-image {
-    width: 100%;
-    height: 150px; /* Hauteur fixe pour les images */
-    object-fit: cover;
+.photo-item:hover {
+  transform: scale(1.05);
+}
+
+/* Thumbnail styling */
+.photo-thumbnail {
+  flex: 0 1 auto; /* Allow thumbnail to grow as needed */
+  overflow: hidden; /* Hide overflow */
+  height: 50%; /* Make thumbnail take half the height of the card */
+}
+
+.photo-thumbnail img {
+  width: 100%; /* Make image fit the container width */
+  height: 100%; /* Make image take full height of the thumbnail container */
+  object-fit: cover; /* Ensure image covers the area */
 }
 
 .card-content {
-    padding: 15px;
+  padding: 15px;
+  flex: 1; /* Allow content to take remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
 }
 
 .card-title {
-    font-size: 1.2em;
-    margin: 0 0 10px;
+  font-size: 1.2em;
+  margin: 0 0 10px;
 }
 
 .card-description {
-    font-size: 0.9em;
-    color: #555;
-}
-/* Media Query pour les écrans de 320px à 800px */
-@media (min-width: 320px) and (max-width: 873px) {
-  .photo-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    flex-direction: column;
+  font-size: 0.9em;
+  color: #555;
 }
 
 
-}
+
+
+
 
 /* Media Queries pour assurer la responsivité */
 @media (max-width: 1200px) {
@@ -1810,43 +1791,6 @@ textarea {
 }
 
 
-/* Photo grid styling */
-.photo-grid {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-    gap: 20px; /* Space between items */
-    justify-content: center; /* Center the grid items */
-}
-
-/* Individual photo item */
-.photo-item {
-    flex: 0 0 calc(25% - 20px); /* Adjust width of items */
-    box-sizing: border-box;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    max-width: 200px;
-    max-height: 300px; /* Set a max-height for the card */
-    display: flex;
-    flex-direction: column; /* Align items vertically */
-}
-
-/* Thumbnail styling */
-.photo-thumbnail {
-    flex: 0 1 auto; /* Allow thumbnail to grow as needed */
-    overflow: hidden; /* Hide overflow */
-}
-
-.photo-thumbnail img {
-    width: 100%; /* Make image fit the container width */
-    height: 100%; /* Fixed height for images */
-    object-fit: cover; /* Ensure image covers the area */
-}
-
-
 
 
 /* Card content styling */
@@ -1882,7 +1826,6 @@ textarea {
   padding: 10px;
   text-align: center; /* Centre le texte sous l'image */
 }
-
 
 
 .photo-title {
