@@ -33,7 +33,7 @@ get_header();
                 <footer class="entry-footer">
                     <?php
                     wp_link_pages( array(
-                        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nathalie-mota' ),
+                        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'scenario' ),
                         'after'  => '</div>',
                     ) );
                     ?>

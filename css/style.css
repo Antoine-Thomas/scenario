@@ -847,7 +847,7 @@ footer {
 
 /* Single photo */
 
-.single-photo-content {
+.single-projet-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -951,7 +951,7 @@ transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 
 /* Style pour l'image dans la section photo-display */
 
-.photo-display img {
+.projet-display img {
   width: 100%; /* Ajuste la largeur de l'image pour qu'elle prenne toute la largeur du conteneur */
   height: auto; /* Maintient les proportions de l'image */
 
@@ -961,7 +961,7 @@ transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 
 
 /* Description de la photo */
-.single-photo-content .photo-description {
+.single-projet-content .projet-description {
   background-color: #fff; /* Couleur de fond blanc */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre pour un effet de profondeur */
   padding: 20px; /* Padding interne pour espacer le texte du bord */
@@ -1859,6 +1859,28 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit; /* Hérite de la couleur des éléments parent */
 }
 
+.plexiglass-card-4 {
+  border: 1px solid #ccc; /* Bordure de la carte */
+  padding: 20px; /* Espacement intérieur */
+  background: rgba(255, 255, 255, 0.8); /* Fond transparent avec une légère opacité */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée */
+  margin: 20px auto; /* Marges pour centrer la carte */
+  max-width: 1200px; /* Largeur maximale de la carte */
+}
+
+.plexiglass-card-4 h1, .plexiglass-card-4 h2, .plexiglass-card-4 p {
+  margin-bottom: 15px; /* Espacement entre les éléments */
+}
+
+.plexiglass-card-4 a {
+  color: #0073aa; /* Couleur des liens */
+  text-decoration: none; /* Supprimer le soulignement */
+}
+
+.plexiglass-card-4 a:hover {
+  text-decoration: underline; /* Souligner les liens au survol */
+}
 
 
 /* Media Query pour les écrans de 320px à 800px */

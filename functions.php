@@ -10,7 +10,7 @@ function scenario_setup() {
     add_theme_support('custom-logo');
     add_theme_support('post-thumbnails');
     add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption'));
-    
+
     register_nav_menus(array(
         'primary' => esc_html__('Menu principal', 'scenario'),
     ));
@@ -25,41 +25,41 @@ function scenario_enqueue_scripts() {
 
     // Scripts
     wp_enqueue_script('jquery');
-    $scripts = array(
-        'scenario-script' => '/js/script.js',
-        'scenario-photosloader' => '/js/photosloader.js',
-        'scenario-previews' => '/js/previews.js',
-    );
-
-    foreach ($scripts as $handle => $src) {
-        wp_enqueue_script($handle, get_template_directory_uri() . $src, array('jquery'), null, true);
-    }
+    wp_enqueue_script('scenario-script', get_template_directory_uri() . '/js/script.js', array('jquery'), null, true);
+    wp_enqueue_script('scenario-photosloader', get_template_directory_uri() . '/js/photosloader.js', array('jquery'), null, true);
 
     // Localize scripts
     wp_localize_script('scenario-script', 'nmAjax', array(
         'ajaxUrl' => admin_url('admin-ajax.php'),
-        'home_url' => home_url('/')  // Ajout de l'URL de la page d'accueil
+        'home_url' => home_url('/'),  // Ajout de l'URL de la page d'accueil
     ));
-    wp_localize_script('scenario-banner', 'ajax_object', array('ajaxurl' => admin_url('admin-ajax.php')));
+    wp_localize_script('scenario-photosloader', 'nmAjax', array(
+        'ajaxUrl' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('projets_nonce')
+    ));
 }
 add_action('wp_enqueue_scripts', 'scenario_enqueue_scripts');
 
-/**
- * Ajouter une classe pour envoyer à la section appropriée en fonction du type de page
- */
-function ajouter_classe_contact_link($atts, $item, $args) {
+// Ajouter une classe pour envoyer à la section appropriée en fonction du type de page
+function ajouter_classe_open_popup($atts, $item, $args) {
     if ($item->title === 'Contact') {
-        if (is_singular('photo')) {
-            $atts['class'] = isset($atts['class']) ? $atts['class'] . ' contact-link single-photo' : 'contact-link single-photo';
+        $atts['class'] = isset($atts['class']) ? $atts['class'] . ' ' : '';
+
+        // Vérifiez si nous sommes sur une page de type "single projet"
+        if (is_singular('projet')) {
+            // Pour les pages de type "single projet", diriger vers le footer
             $atts['href'] = home_url('/') . '#footer';
+            $atts['data-is-single-projet'] = 'true'; // Ajoutez des attributs personnalisés si nécessaire
         } else {
-            $atts['class'] = isset($atts['class']) ? $atts['class'] . ' contact-link home-page' : 'contact-link home-page';
-            $atts['href'] = '#contact-section';
+            // Pour toutes les autres pages, diriger vers la section contact
+            $atts['href'] = home_url('/') . '#contact-section';
         }
     }
     return $atts;
 }
-add_filter('nav_menu_link_attributes', 'ajouter_classe_contact_link', 10, 3);
+add_filter('nav_menu_link_attributes', 'ajouter_classe_open_popup', 10, 3);
+
+
 
 
 // Ajouter des icônes au menu de navigation
@@ -77,6 +77,20 @@ function ajouter_icone_menu($items, $args) {
     return $items;
 }
 add_filter('wp_nav_menu_items', 'ajouter_icone_menu', 10, 2);
+
+function use_plexiglass_template($template) {
+    if (is_page() && !is_front_page() && !is_singular()) {
+        // Chemin vers votre modèle plexiglass
+        $new_template = locate_template(array('page-plexiglass.php'));
+        if ($new_template) {
+            return $new_template;
+        }
+    }
+    return $template;
+}
+add_filter('page_template', 'use_plexiglass_template');
+
+
 
 // Ajouter support WebP
 function add_webp_support($mimes) {

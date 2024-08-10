@@ -1,65 +1,66 @@
 <?php
-function load_photos_by_selection() {
-    $date_order = isset($_POST['date_order']) ? sanitize_text_field($_POST['date_order']) : 'DESC';
-    
-    // Définir les arguments pour la requête
-    $args = array(
-        'post_type' => 'photo',
-        'posts_per_page' => -1, // Charger toutes les photos
-        'meta_key' => 'numero', // Clé du champ ACF
-        'orderby' => 'meta_value_num', // Trier par valeur numérique du champ ACF
-        'order' => 'ASC', // Ordre croissant
-    );
-    
-    // Ajouter des filtres de taxonomie si nécessaire
-    if (!empty($categorie_ids) || !empty($format_ids)) {  
-        $args['tax_query'] = $tax_query;
+// AJAX function
+function load_projects_by_selection() {
+    if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'projets_nonce')) {
+        wp_send_json_error('Nonce verification failed');
+        wp_die();
     }
 
-    // Requête WP_Query pour récupérer les photos
-    $photos_query = new WP_Query($args);
+    $args = array(
+        'post_type' => 'projet',
+        'posts_per_page' => -1,
+        'meta_key' => 'numero', // Clé méta pour le tri
+        'orderby' => 'meta_value_num', // Tri numérique
+        'order' => 'ASC', // Ordre croissant par défaut
+    );
+    
+    $projects_query = new WP_Query($args);
 
     ob_start();
-    if ($photos_query->have_posts()) {
+    if ($projects_query->have_posts()) {
         echo '<div class="photo-grid">';
-        while ($photos_query->have_posts()) {
-            $photos_query->the_post();
-            $photo = get_field('photo');
+        while ($projects_query->have_posts()) {
+            $projects_query->the_post();
+            $photo = get_field('projet');
             $titre = get_field('titre');
             $description = get_field('description');
-            $numero = get_field('numero'); // Récupérer le champ ACF "Numero"
+            // $numero est défini mais ne sera pas affiché
+            $numero = get_field('numero'); // Assurez-vous que ce champ est correctement défini
 
             echo '<div class="photo-item">';
             if ($photo) {
                 $image = wp_get_attachment_image_src($photo['ID'], 'full');
-                echo '<div class="photo-thumbnail ' . ($image[2] > $image[1] ? 'portrait' : 'landscape') . '">';
+                echo '<div class="photo-thumbnail">';
                 echo '<img src="' . esc_url($image[0]) . '" alt="' . esc_attr(get_the_title()) . '" />';
                 echo '<div class="lightbox" style="display: none;">';
                 echo '<div class="lightbox-content">';
                 echo '<a href="' . get_permalink() . '" class="lightbox-icon eye-icon" title="Voir le détail de la photo"></a>';
                 echo '</div></div></div>';
 
-                // Ajout du titre, de la description et du numéro
                 if ($titre) {
                     echo '<div class="photo-title">' . esc_html($titre) . '</div>';
                 }
                 if ($description) {
                     echo '<div class="photo-description">' . esc_html($description) . '</div>';
                 }
-              
+                // Ne pas afficher le numéro ici
+                // if ($numero) {
+                //     echo '<div class="photo-numero">Numero: ' . esc_html($numero) . '</div>'; // Ne pas afficher
+                // }
             }
             echo '</div>';
         }
         echo '</div>';
     } else {
-        echo '<p>No photos found</p>';
+        echo '<p>No projects found</p>';
     }
     wp_reset_postdata();
 
     $response = ob_get_clean();
-    echo $response;
-    wp_die();
+    wp_send_json_success($response);
 }
+add_action('wp_ajax_load_projects_by_selection', 'load_projects_by_selection');
+add_action('wp_ajax_nopriv_load_projects_by_selection', 'load_projects_by_selection');
 
-add_action('wp_ajax_load_photos_by_selection', 'load_photos_by_selection');
-add_action('wp_ajax_nopriv_load_photos_by_selection', 'load_photos_by_selection');
+
+

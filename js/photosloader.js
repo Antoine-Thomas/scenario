@@ -1,43 +1,37 @@
 (function($) {
-    // Déclaration de la variable ajaxUrl en utilisant nmAjax.ajaxUrl défini par wp_localize_script
     const ajaxUrl = nmAjax.ajaxUrl;
+    const nonce = nmAjax.nonce;
 
-    // Fonction pour charger les photos en fonction des sélections de catégorie, format et ordre de date
-    function loadPhotosBySelection() {
-      const dateOrder = $('#date').val() || "ASC"; // Par défaut, ordre ascendant si aucune valeur sélectionnée
-
-        const args = {
-            action: 'load_photos_by_selection',
-            date_order: dateOrder.toUpperCase(),
-            page: 1,
-            photos_per_page: -1
-        };
-
+    function loadProjectsBySelection() {
         $.ajax({
             type: 'POST',
             url: ajaxUrl,
-            data: args,
-            success: function(response) {
-                $('.photo-grid-container').html(response);
-                applyLightboxEffect();
-                initializeFeatures();
+            data: {
+                action: 'load_projects_by_selection', // Action définie dans functions.php
+                nonce: nonce
             },
-            error: function(response) {
-                console.error('Erreur:', response);
+            success: function(response) {
+                if (response.success) {
+                    $('.photo-grid-container').html(response.data);
+                    applyLightboxEffect();
+                    initializeFeatures();
+                } else {
+                    console.error('Erreur:', response.data);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Erreur:', status, error);
             }
         });
     }
 
     function initializeFeatures() {
         $('.list_items_filter .list_item').off('click').on('click', function() {
-         
-          
-
             const selectedValue = $(this).data('value');
             $selectedValue.text($(this).text());
             $hiddenInput.val(selectedValue);
 
-            loadPhotosBySelection();
+            loadProjectsBySelection();
         });
     }
 
@@ -54,8 +48,12 @@
 
     $(document).ready(function() {
         initializeFeatures();
-        loadPhotosBySelection();
+        loadProjectsBySelection();
         applyLightboxEffect();
     });
 
 })(jQuery);
+
+
+
+

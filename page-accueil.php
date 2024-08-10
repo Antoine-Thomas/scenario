@@ -20,8 +20,8 @@ get_header();
 
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
-        <div id="particles-js"></div>
-        
+            <div id="particles-js"></div>
+
             <!-- Hero Section -->
             <section id="hero-section" class="hero">
                 <div class="banner">
@@ -30,7 +30,6 @@ get_header();
                             <div class="title-hero">
                                 <div class="plexiglass-card">
                                     <span class="name">Thomas Leroyer</span>
-                                    <!-- Logo WordPress ajouté ici -->
                                     <img src="<?php echo get_template_directory_uri(); ?>/images/icon/WP.png" alt="WordPress Logo" class="wordpress-logo">
                                 </div>
                                 <span class="title-subtext">Développeur Web WordPress</span>
@@ -114,7 +113,6 @@ get_header();
             </section>
 
             <section class="additional-cards">
-                <!-- Grande carte englobante -->
                 <div class="large-card">
                     <div class="photo-grid-container">
                         <!-- Contenu dynamique chargé ici -->
@@ -128,12 +126,7 @@ get_header();
                     <div class="profile-card">
                         <img src="<?php echo get_template_directory_uri(); ?>/images/portrait.webp" alt="Thomas Leroyer" class="profile-photo">
                         <div class="plexiglass-card3">
-                            <p class="subtitle">Prêt à démarrer votre projet web ?
-                                Profitez de mon expertise en développement web en me contactant.
-                                Je suis là pour vous donner toutes les informations.
-                                Envoyez les détails de votre projet via le formulaire.
-                                N'attendez plus, contactez-moi dès maintenant !
-                            </p>
+                            <p class="subtitle">Prêt à démarrer votre projet web ? Profitez de mon expertise en développement web en me contactant. Je suis là pour vous donner toutes les informations. Envoyez les détails de votre projet via le formulaire. N'attendez plus, contactez-moi dès maintenant !</p>
                         </div>
                     </div>
                     <div class="contact-form-card" role="form">
@@ -144,11 +137,10 @@ get_header();
             </section>
         </main><!-- #main -->
 
-        <!-- partial -->
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" async></script>
        
     </div><!-- #primary -->
 
     <?php get_footer(); ?>
 </body>
 </html>
+
