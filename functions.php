@@ -36,21 +36,31 @@ function scenario_enqueue_scripts() {
     }
 
     // Localize scripts
-    wp_localize_script('scenario-script', 'nmAjax', array('ajaxUrl' => admin_url('admin-ajax.php')));
+    wp_localize_script('scenario-script', 'nmAjax', array(
+        'ajaxUrl' => admin_url('admin-ajax.php'),
+        'home_url' => home_url('/')  // Ajout de l'URL de la page d'accueil
+    ));
     wp_localize_script('scenario-banner', 'ajax_object', array('ajaxurl' => admin_url('admin-ajax.php')));
 }
 add_action('wp_enqueue_scripts', 'scenario_enqueue_scripts');
 
-// Ajouter une classe pour ouvrir un popup au menu Contact
-function ajouter_classe_open_popup($atts, $item, $args) {
+/**
+ * Ajouter une classe pour envoyer à la section appropriée en fonction du type de page
+ */
+function ajouter_classe_contact_link($atts, $item, $args) {
     if ($item->title === 'Contact') {
-        $atts['class'] = isset($atts['class']) ? $atts['class'] . ' open-popup' : 'open-popup';
-        $atts['href'] = '#contact-popup';
-        $atts['data-target'] = '#contact-popup';
+        if (is_singular('photo')) {
+            $atts['class'] = isset($atts['class']) ? $atts['class'] . ' contact-link single-photo' : 'contact-link single-photo';
+            $atts['href'] = home_url('/') . '#footer';
+        } else {
+            $atts['class'] = isset($atts['class']) ? $atts['class'] . ' contact-link home-page' : 'contact-link home-page';
+            $atts['href'] = '#contact-section';
+        }
     }
     return $atts;
 }
-add_filter('nav_menu_link_attributes', 'ajouter_classe_open_popup', 10, 3);
+add_filter('nav_menu_link_attributes', 'ajouter_classe_contact_link', 10, 3);
+
 
 // Ajouter des icônes au menu de navigation
 function ajouter_icone_menu($items, $args) {
@@ -104,3 +114,5 @@ add_action('wp_head', 'scenario_body_background');
 
 // Inclure d'autres fichiers API REST nécessaires
 require_once get_template_directory() . '/inc/photosloader.php';
+?>
+
