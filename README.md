@@ -2,7 +2,7 @@
 
 Bienvenue sur **SCENARIO**, mon portfolio en ligne où je présente mes compétences et projets en tant que développeur web spécialisé en WordPress.
 
-![Logo de SCENARIO](https://github.com/Antoine-Thomas/scenario/blob/main/images/portofolio/logo.png)
+![Logo de SCENARIO](https://github.com/Antoine-Thomas/scenario/blob/main/images/fondd.png)
 
 ## 🚀 Présentation du Projet
 
