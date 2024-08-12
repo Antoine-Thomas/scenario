@@ -1,8 +1,8 @@
 /*
 
-Theme Name: Nathalie Mota
+Theme Name: scenario
 
-Theme URI: https://www.searching-murphy.com/nathalie-mota
+Theme URI: https://www.scenario.searching-murphy.com/
 
 Description: Thème personnalisé pour le site de photographie de Nathalie Mota.
 
@@ -361,15 +361,75 @@ Author URI: https://www.searching-murphy.com/
     }
   
   .title-subtext {
-      font-family: 'Raleway', sans-serif;
-      font-size: 42px;
-      font-weight: 400;
-      color: #333;
-      text-align: center;
-      line-height: 1.1; /* Réduit la hauteur de ligne pour rapprocher les lignes */
-      margin: 10px 0; /* Ajuste les marges pour rapprocher les lignes */
-      padding: 0; /* Assurez-vous que le padding est nul ou ajusté */
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: #333;
+    text-align: center;
+    line-height: 1.5; /* Légèrement plus espacé pour une meilleure lisibilité */
+    margin: 5px 0; /* Réduction des marges pour un aspect plus compact */
+    padding: 0;
+    
      
       }
   }
-      
+/* Styles spécifiques pour les écrans entre 320px et 920px */
+@media (min-width: 320px) and (max-width: 920px) {
+  .wp-block-file__button {
+      padding: .5em 1em; /* Ajuste le padding pour un bouton plus petit */
+      font-size: 14px; /* Réduit la taille de la police */
+      border-radius: 1.5em; /* Ajuste le rayon des coins pour un style plus compact */
+      display: block; /* Assure que le bouton occupe son propre espace */
+      margin: 10px auto 0; /* Ajoute une marge de 10px en haut et centre le bouton horizontalement */
+      text-align: center; /* Centre le texte à l'intérieur du bouton */
+      width: fit-content; /* Ajuste la largeur du bouton en fonction de son contenu */
+  }
+}
+
+
+@media (min-width: 320px) and (max-width: 1260px) {
+  .plexiglass-card-4 {
+    margin: 20px 10px; /* 10px de marge sur les côtés pour les petits écrans */
+   
+  }
+}
+
+
+/* Media Query pour les écrans de 320px à 800px */
+@media (min-width: 320px) and (max-width: 873px) {
+  .photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+}
+
+/* Media Queries pour assurer la responsivité */
+@media (max-width: 1200px) {
+    .card-item {
+        flex: 0 0 calc(33.33% - 20px); /* Trois cartes par ligne pour les écrans moyens */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-item {
+        flex: 0 0 calc(50% - 20px); /* Deux cartes par ligne pour les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-item {
+        flex: 0 0 100%; /* Une carte par ligne pour les très petits écrans */
+    }
+}
+@media screen and (max-width: 920px) {
+  .pdf-embed {
+      display: none;
+  }
+  .cv-preview {
+      display: block;
+  }
+}

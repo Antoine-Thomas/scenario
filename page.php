@@ -10,12 +10,10 @@
 get_header(); ?>
 
 <?php
-// Vérifiez si nous ne sommes pas sur la page d'accueil ou sur une page de type 'single'
-if (!is_front_page() && !is_singular()) : ?>
+if (!is_front_page() && !(is_singular() && !is_page())) : ?>
     <div class="plexiglass-card-4">
 <?php endif; ?>
  
-<!-- Contenu principal de la page -->
 <main id="main" class="site-main" role="main">
     <?php
     while (have_posts()) : the_post();
@@ -25,9 +23,9 @@ if (!is_front_page() && !is_singular()) : ?>
 </main><!-- #main -->
  
 <?php
-// Fermez la carte plexiglass si nécessaire
-if (!is_front_page() && !is_singular()) : ?>
+if (!is_front_page() && !(is_singular() && !is_page())) : ?>
     </div> <!-- Fin de la carte plexiglass -->
 <?php endif; ?>
  
 <?php get_footer(); ?>
+

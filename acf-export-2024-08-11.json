@@ -1,0 +1,296 @@
+
+[
+    {
+        "key": "group_66609114d9e4b",
+        "title": "Projets Details",
+        "fields": [
+            {
+                "key": "field_6660e80ae5dde",
+                "label": "Titre",
+                "name": "titre",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6660e8727dd7c",
+                "label": "projet",
+                "name": "projet",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_66acb0ad75b59",
+                "label": "description",
+                "name": "description",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "rows": "",
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_66afdc0f5a9e3",
+                "label": "Numero",
+                "name": "numero",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "min": "",
+                "max": "",
+                "placeholder": "",
+                "step": "",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "taxonomy",
+                    "operator": "==",
+                    "value": "all"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ],
+            [
+                {
+                    "param": "taxonomy",
+                    "operator": "==",
+                    "value": "all"
+                }
+            ],
+            [
+                {
+                    "param": "post_format",
+                    "operator": "==",
+                    "value": "image"
+                }
+            ],
+            [
+                {
+                    "param": "post_template",
+                    "operator": "==",
+                    "value": "default"
+                }
+            ],
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "default"
+                }
+            ],
+            [
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "category:concert"
+                }
+            ],
+            [
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "category:concert"
+                }
+            ],
+            [
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "category:concert"
+                }
+            ],
+            [
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "category:mariage"
+                }
+            ],
+            [
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "category:reception"
+                }
+            ],
+            [
+                {
+                    "param": "post_taxonomy",
+                    "operator": "==",
+                    "value": "category:television"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "projet"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "post_type_6658c4ac87bc5",
+        "title": "projets",
+        "menu_order": 0,
+        "active": true,
+        "post_type": "projet",
+        "advanced_configuration": true,
+        "import_source": "",
+        "import_date": "",
+        "labels": {
+            "name": "projets",
+            "singular_name": "projet",
+            "menu_name": "projets",
+            "all_items": "Tous les projets",
+            "edit_item": "Modifier projet",
+            "view_item": "Voir projet",
+            "view_items": "Voir projets",
+            "add_new_item": "Ajouter projet",
+            "add_new": "Ajouter projet",
+            "new_item": "Nouveau projet",
+            "parent_item_colon": "projet parent :",
+            "search_items": "Rechercher projets",
+            "not_found": "Aucun projets trouvé",
+            "not_found_in_trash": "Aucun projets trouvé dans la corbeille",
+            "archives": "Archives des projet",
+            "attributes": "Attributs des projet",
+            "featured_image": "",
+            "set_featured_image": "",
+            "remove_featured_image": "",
+            "use_featured_image": "",
+            "insert_into_item": "Insérer dans projet",
+            "uploaded_to_this_item": "Téléversé sur ce projet",
+            "filter_items_list": "Filtrer la liste projets",
+            "filter_by_date": "Filtrer projets par date",
+            "items_list_navigation": "Navigation dans la liste projets",
+            "items_list": "Liste projets",
+            "item_published": "projet publié.",
+            "item_published_privately": "projet publié en privé.",
+            "item_reverted_to_draft": "projet repassé en brouillon.",
+            "item_scheduled": "projet planifié.",
+            "item_updated": "projet mis à jour.",
+            "item_link": "Lien projet",
+            "item_link_description": "Un lien vers un projet."
+        },
+        "description": "",
+        "public": true,
+        "hierarchical": true,
+        "exclude_from_search": false,
+        "publicly_queryable": true,
+        "show_ui": true,
+        "show_in_menu": true,
+        "admin_menu_parent": "",
+        "show_in_admin_bar": true,
+        "show_in_nav_menus": true,
+        "show_in_rest": false,
+        "rest_base": "",
+        "rest_namespace": "wp\/v2",
+        "rest_controller_class": "WP_REST_Posts_Controller",
+        "menu_position": "",
+        "menu_icon": {
+            "type": "dashicons",
+            "value": "dashicons-admin-post"
+        },
+        "rename_capabilities": false,
+        "singular_capability_name": "post",
+        "plural_capability_name": "posts",
+        "supports": [
+            "title",
+            "editor",
+            "page-attributes",
+            "thumbnail",
+            "custom-fields",
+            "post-formats",
+            "date"
+        ],
+        "taxonomies": "",
+        "has_archive": false,
+        "has_archive_slug": "",
+        "rewrite": {
+            "permalink_rewrite": "post_type_key",
+            "with_front": "1",
+            "feeds": "0",
+            "pages": "1"
+        },
+        "query_var": "post_type_key",
+        "query_var_name": "",
+        "can_export": true,
+        "delete_with_user": false,
+        "register_meta_box_cb": "",
+        "enter_title_here": ""
+    }
+]

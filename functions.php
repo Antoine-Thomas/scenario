@@ -6,14 +6,19 @@
 
 // Configuration du thème
 function scenario_setup() {
+    // Support de fonctionnalités diverses
     add_theme_support('title-tag');
     add_theme_support('custom-logo');
     add_theme_support('post-thumbnails');
     add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption'));
 
+    // Enregistrement des menus
     register_nav_menus(array(
         'primary' => esc_html__('Menu principal', 'scenario'),
     ));
+
+    // Support des sitemaps
+    add_theme_support('sitemaps');
 }
 add_action('after_setup_theme', 'scenario_setup');
 
@@ -28,10 +33,10 @@ function scenario_enqueue_scripts() {
     wp_enqueue_script('scenario-script', get_template_directory_uri() . '/js/script.js', array('jquery'), null, true);
     wp_enqueue_script('scenario-photosloader', get_template_directory_uri() . '/js/photosloader.js', array('jquery'), null, true);
 
-    // Localize scripts
+    // Localisation des scripts
     wp_localize_script('scenario-script', 'nmAjax', array(
         'ajaxUrl' => admin_url('admin-ajax.php'),
-        'home_url' => home_url('/'),  // Ajout de l'URL de la page d'accueil
+        'home_url' => home_url('/'),  // URL de la page d'accueil
     ));
     wp_localize_script('scenario-photosloader', 'nmAjax', array(
         'ajaxUrl' => admin_url('admin-ajax.php'),
@@ -45,22 +50,18 @@ function ajouter_classe_open_popup($atts, $item, $args) {
     if ($item->title === 'Contact') {
         $atts['class'] = isset($atts['class']) ? $atts['class'] . ' ' : '';
 
-        // Vérifiez si nous sommes sur une page de type "single projet"
         if (is_singular('projet')) {
-            // Pour les pages de type "single projet", diriger vers le footer
+            // Rediriger vers le footer sur les pages de type "single projet"
             $atts['href'] = home_url('/') . '#footer';
-            $atts['data-is-single-projet'] = 'true'; // Ajoutez des attributs personnalisés si nécessaire
+            $atts['data-is-single-projet'] = 'true';
         } else {
-            // Pour toutes les autres pages, diriger vers la section contact
+            // Rediriger vers la section contact sur les autres pages
             $atts['href'] = home_url('/') . '#contact-section';
         }
     }
     return $atts;
 }
 add_filter('nav_menu_link_attributes', 'ajouter_classe_open_popup', 10, 3);
-
-
-
 
 // Ajouter des icônes au menu de navigation
 function ajouter_icone_menu($items, $args) {
@@ -78,21 +79,7 @@ function ajouter_icone_menu($items, $args) {
 }
 add_filter('wp_nav_menu_items', 'ajouter_icone_menu', 10, 2);
 
-function use_plexiglass_template($template) {
-    if (is_page() && !is_front_page() && !is_singular()) {
-        // Chemin vers votre modèle plexiglass
-        $new_template = locate_template(array('page-plexiglass.php'));
-        if ($new_template) {
-            return $new_template;
-        }
-    }
-    return $template;
-}
-add_filter('page_template', 'use_plexiglass_template');
-
-
-
-// Ajouter support WebP
+// Support des fichiers WebP
 function add_webp_support($mimes) {
     $mimes['webp'] = 'image/webp';
     return $mimes;
@@ -101,7 +88,7 @@ add_filter('mime_types', 'add_webp_support');
 
 // Lazy loading des images
 function add_lazy_loading_to_images($content) {
-    if (is_feed() || is_preview() || false !== strpos($content, 'loading="lazy"')) {
+    if (is_feed() || is_preview() || strpos($content, 'loading="lazy"') !== false) {
         return $content;
     }
     return preg_replace('/<img(.*?)\/?>/i', '<img$1 loading="lazy" />', $content);
@@ -128,5 +115,23 @@ add_action('wp_head', 'scenario_body_background');
 
 // Inclure d'autres fichiers API REST nécessaires
 require_once get_template_directory() . '/inc/photosloader.php';
-?>
 
+// Ajouter un template pour les erreurs 404
+function scenario_404_template($template) {
+    if (is_404()) {
+        $new_template = locate_template(array('404.php'));
+        if ($new_template) {
+            return $new_template;
+        }
+    }
+    return $template;
+}
+add_filter('template_include', 'scenario_404_template');
+
+// Ajouter le support de la structure de permaliens pour éviter les erreurs de Yoast
+function scenario_permalinks() {
+    global $wp_rewrite;
+    $wp_rewrite->flush_rules();
+}
+add_action('init', 'scenario_permalinks');
+?>

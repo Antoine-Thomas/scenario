@@ -2,7 +2,7 @@
 /**
  * Index Template
  *
- * @package Nathalie Mota
+ * @package scenario
  */
 
 get_header();

@@ -1,5 +1,4 @@
 <footer id="footer">
-
     <div class="footer-container">
         <div class="footer-menu">
             <a href="<?php echo esc_url( home_url( 'cv' ) ); ?>" class="footer-icon" aria-label="CV">
@@ -18,6 +17,10 @@
         </div>
     </div>
 </footer>
+<?php wp_footer(); ?>
+</body>
+</html>
+
 
 
 

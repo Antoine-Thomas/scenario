@@ -1,158 +1,54 @@
 /*
-
-Theme Name Scenario
-Description Un thème WordPress personnalisé nommé Senario.
-Version 1.0
-License GNU General Public License v2 or later
-License URI httpwww.gnu.orglicensesgpl-2.0.html
-Text Domain senario
+Theme Name: Scenario
+Description: Un thème WordPress personnalisé nommé Scenario.
 Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: scenario
 Author: 7om
-Author URI: https://www.searching-murphy.com/
+Author URI: https://www.scenario.searching-murphy.com/
 */
 
 /* Raleway Font Faces */
 @font-face {
-    font-family: 'Raleway';
-    font-style: italic;
-    font-weight: 400;
-    src: url('../assets/fonts/Raleway-Italic.woff2') format('woff2');
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../assets/fonts/Raleway-Italic.woff2') format('woff2');
 }
 
 @font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 300;
-    src: url('../assets/fonts/Raleway-Light.woff2') format('woff2');
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../assets/fonts/Raleway-Light.woff2') format('woff2');
 }
 
 @font-face {
-    font-family: 'Raleway';
-    font-style: italic;
-    font-weight: 300;
-    src: url('../assets/fonts/Raleway-LightItalic.woff2') format('woff2');
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 300;
+  src: url('../assets/fonts/Raleway-LightItalic.woff2') format('woff2');
 }
 
-@font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 500;
-    src: url('../assets/fonts/Raleway-Medium.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: italic;
-    font-weight: 500;
-    src: url('../assets/fonts/Raleway-MediumItalic.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../assets/fonts/Raleway-Regular.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 600;
-    src: url('../assets/fonts/Raleway-SemiBold.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: italic;
-    font-weight: 600;
-    src: url('../assets/fonts/Raleway-SemiBoldItalic.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 100;
-    src: url('../assets/fonts/Raleway-Thin.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: italic;
-    font-weight: 100;
-    src: url('../assets/fonts/Raleway-ThinItalic.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 900;
-    src: url('../assets/fonts/Raleway-Black.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: italic;
-    font-weight: 900;
-    src: url('../assets/fonts/Raleway-BlackItalic.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 700;
-    src: url('../assets/fonts/Raleway-Bold.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: italic;
-    font-weight: 700;
-    src: url('../assets/fonts/Raleway-BoldItalic.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 800;
-    src: url('../assets/fonts/Raleway-ExtraBold.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: italic;
-    font-weight: 800;
-    src: url('../assets/fonts/Raleway-ExtraBoldItalic.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 200;
-    src: url('../assets/fonts/Raleway-ExtraLight.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: italic;
-    font-weight: 200;
-    src: url('../assets/fonts/Raleway-ExtraLightItalic.woff2') format('woff2');
-}
+/* Ajoutez les autres @font-face ici */
 
 
+
+/* Style général du corps */
 body {
-    font-family: 'Raleway', sans-serif;
-    color: #23282d;
-    max-width: 1440px;
-    margin: 0 auto; /* Centre le contenu horizontalement */
-    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
-    background-image: url('<?php echo get_template_directory_uri(); ?>/images/fond.webp');
-    background-size: cover; /* Assure que l'image couvre tout l'écran */
-    background-position: center center; /* Centre l'image de fond */
-    background-repeat: no-repeat; /* Évite la répétition de l'image */
-    background-attachment: fixed; /* L'image reste en place lors du scroll */
-
-
+  font-family: 'Raleway', sans-serif;
+  color: #23282d;
+  max-width: 1440px;
+  margin: 0 auto; /* Centre le contenu horizontalement */
+  box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+  background-image: url('../images/fond.webp');
+  background-size: cover; /* Assure que l'image couvre tout l'écran */
+  background-position: center center; /* Centre l'image de fond */
+  background-repeat: no-repeat; /* Évite la répétition de l'image */
+  background-attachment: fixed; /* L'image reste en place lors du scroll */
 }
+
 
 element.style {
     width: 1440px;
@@ -173,9 +69,10 @@ p.light {
 }
 
 h1 {
-    padding-top: 50px;
-    text-align: center;
-    font-weight: 900; /* Utilisation de Raleway Black */
+  text-align: center;
+  font-weight: 900; /* Utilisation du poids 900 pour Raleway Black */
+  font-family: 'Raleway', sans-serif; /* Utilisation de la police Raleway */
+  text-transform: uppercase; /* Texte en majuscules */
 }
 
 a {
@@ -390,7 +287,7 @@ ul li {
 /* Media Queries pour les petits écrans */
 @media (max-width: 600px) {
   .photo-banner {
-      padding: 0 15px; /* Moins de padding pour les petits écrans si nécessaire */
+    
       width: calc(100% - 30px); /* Ajuste la largeur en tenant compte du padding réduit */
   }
 }
@@ -524,7 +421,7 @@ ul li {
     font-size: 24px;
     color: #555;
     margin-top: 10px; /* Marge pour espacer du titre */
-    text-align: center; /* Centrer le texte */
+    text-align: left; /* Centrer le texte */
     z-index: 1;
 }
 
@@ -1848,69 +1745,66 @@ textarea {
 #portfolio-section .plexiglass-card2 .title {
   font-size: 1.5em; /* Taille du titre pour la section portfolio */
   color: #000; /* Couleur du titre */
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-/* Assurez-vous que les autres titres ne sont pas affectés */
-h1, h2, h3, h4, h5, h6 {
-  /* Styles globaux pour les titres si nécessaire */
-  margin: 0;
-  padding: 0;
-  color: inherit; /* Hérite de la couleur des éléments parent */
-}
+
 
 .plexiglass-card-4 {
-  border: 1px solid #ccc; /* Bordure de la carte */
-  padding: 20px; /* Espacement intérieur */
-  background: rgba(255, 255, 255, 0.8); /* Fond transparent avec une légère opacité */
-  border-radius: 10px; /* Coins arrondis */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée */
-  margin: 20px auto; /* Marges pour centrer la carte */
-  max-width: 1200px; /* Largeur maximale de la carte */
+  border: 1px solid #ccc;
+  padding: 10px 20px; /* 10px en haut et en bas, 20px sur les côtés */
+  background: rgb(255 255 255 / .8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / .2);
+  margin: 20px auto;
+  max-width: 820px;
+  max-height: 100%;
 }
 
-.plexiglass-card-4 h1, .plexiglass-card-4 h2, .plexiglass-card-4 p {
+.plexiglass-card-4 h1 {
+  font-size: 24px; /* Ajustez la taille selon vos besoins */
+  margin-top: 20px; /* Espacement au-dessus du titre */
+  margin-bottom: 15px; /* Espacement sous le titre */
+  text-transform: uppercase; /* Convertit le texte en majuscules */
+}
+
+
+.plexiglass-card-4 p {
+  margin: 0;
+  padding: 0;
+}
+
+.plexiglass-card-4 h2, .plexiglass-card-4 p {
   margin-bottom: 15px; /* Espacement entre les éléments */
 }
-
 .plexiglass-card-4 a {
-  color: #0073aa; /* Couleur des liens */
-  text-decoration: none; /* Supprimer le soulignement */
+  color: #109ec9; /* Couleur noire */
+  text-decoration: none; /* Supprime le soulignement par défaut */
+  font-weight: bold; /* Met le texte en gras */
+  font-size:small;
 }
 
 .plexiglass-card-4 a:hover {
   text-decoration: underline; /* Souligner les liens au survol */
+  font-style: bold;
 }
 
 
-/* Media Query pour les écrans de 320px à 800px */
-@media (min-width: 320px) and (max-width: 873px) {
-  .photo-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    flex-direction: column;
-}
 
 
+
+
+
+.pdf-embed {
+  width: 100%;
+  height: 1200px;
+  display: block;
 }
 
-/* Media Queries pour assurer la responsivité */
-@media (max-width: 1200px) {
-    .card-item {
-        flex: 0 0 calc(33.33% - 20px); /* Trois cartes par ligne pour les écrans moyens */
-    }
+.cv-preview {
+  display: none;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
-@media (max-width: 768px) {
-    .card-item {
-        flex: 0 0 calc(50% - 20px); /* Deux cartes par ligne pour les petits écrans */
-    }
-}
-
-@media (max-width: 480px) {
-    .card-item {
-        flex: 0 0 100%; /* Une carte par ligne pour les très petits écrans */
-    }
-}
