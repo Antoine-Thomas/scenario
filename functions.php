@@ -128,10 +128,20 @@ function scenario_404_template($template) {
 }
 add_filter('template_include', 'scenario_404_template');
 
-// Ajouter le support de la structure de permaliens pour éviter les erreurs de Yoast
-function scenario_permalinks() {
-    global $wp_rewrite;
-    $wp_rewrite->flush_rules();
+// Prioriser une URL spécifique dans le sitemap
+function prioritize_specific_url_in_sitemap($url_list, $post_type) {
+    foreach ($url_list as &$url_info) {
+        // Vérifiez si l'URL correspond à la page que vous souhaitez prioriser
+        if ($url_info['loc'] === 'https://www.scenario.searching-murphy.com/') {
+            // Changez la priorité de cette URL
+            $url_info['priority'] = 1.0; // Priorité maximale
+            $url_info['changefreq'] = 'daily'; // Changer la fréquence de mise à jour si nécessaire
+        }
+    }
+
+    return $url_list;
 }
-add_action('init', 'scenario_permalinks');
+add_filter('wp_sitemaps_posts_entry', 'prioritize_specific_url_in_sitemap', 10, 2);
+
+
 ?>

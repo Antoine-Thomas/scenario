@@ -9,7 +9,7 @@ get_header(); ?>
 
 
 <!-- Balise meta pour la description SEO -->
-<meta name="description" content="<?php echo get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true); ?>">
+<meta name="description" content="Bienvenue sur le site de Thomas Leroyer, développeur web spécialisé WordPress. Découvrez mes compétences et projets. Contactez-moi pour discuter de votre projet.">
 
 <!-- Contenu de la page -->
 <main id="main-content" class="site-main">
@@ -23,7 +23,7 @@ get_header(); ?>
                     <div class="title-hero">
                         <div class="plexiglass-card">
                             <span class="name">Thomas Leroyer</span>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/icon/WP.png" alt="WordPress Logo" class="wordpress-logo">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/icon/WP.webp" alt="WordPress Logo" class="wordpress-logo">
                         </div>
                         <span class="title-subtext">Développeur Web WordPress</span>
                     </div>
@@ -44,9 +44,9 @@ get_header(); ?>
                 <div class="card-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/portofolio/banner.webp');"></div>
                 <div class="card-info">
                     <div class="card-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/icon/html5.png" alt="HTML5 Icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/icon/css3.png" alt="CSS3 Icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/icon/javascript1.png" alt="JavaScript Icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/icon/html5.webp" alt="HTML5 Icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/icon/css3.webp" alt="CSS3 Icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/icon/javascript1.webp" alt="JavaScript Icon">
                     </div>
                     <h1 slot="header">FRONTEND</h1>
                     <p slot="content">Création de sites esthétiques et fonctionnels, un design personnalisé et adaptatif.</p>
@@ -58,8 +58,8 @@ get_header(); ?>
                 <div class="card-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/portofolio/black.webp');"></div>
                 <div class="card-info">
                     <div class="card-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/icon/sql.png" alt="SQL Icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/icon/php.png" alt="PHP Icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/icon/sql.webp" alt="SQL Icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/icon/php.webp" alt="PHP Icon">
                     </div>
                     <h1 slot="header">BACKEND</h1>
                     <p slot="content">Services de maintenance régulière, assure sécurité et performances optimales de votre site.</p>

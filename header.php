@@ -17,7 +17,8 @@
      <meta charset="<?php bloginfo('charset'); ?>" />
      <meta name="viewport" content="width=device-width, initial-scale=1" />
      <meta name="keywords" content="Portofolio développeur web spécialisé Wordpress" />
-     <meta name="description" content="<?php echo get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true); ?>" >
+   <!-- Balise meta pour la description SEO -->
+<meta name="description" content="Bienvenue sur le site de Thomas Leroyer, développeur web spécialisé WordPress. Découvrez mes compétences et projets. Contactez-moi pour discuter de votre projet.">
  
      <?php wp_head(); ?>
  </head>
@@ -30,7 +31,7 @@
          <div class="container-header">
              <!-- Logo du site avec un lien vers la page d'accueil -->
              <a id="logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="Page d'accueil de Scenario">
-                 <img src="<?php echo get_template_directory_uri(); ?>/images/portofolio/logo.png" alt="Logo <?php echo esc_attr(get_bloginfo('name')); ?>">
+                 <img src="<?php echo get_template_directory_uri(); ?>/images/portofolio/logo.webp" alt="Logo <?php echo esc_attr(get_bloginfo('name')); ?>">
              </a>
  
              <!-- Navigation principale -->
